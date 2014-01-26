@@ -1,28 +1,65 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8"/>
     <title></title>
     <link type="text/css" href="styles/index.css" rel="stylesheet">
-    <link type="text/css" href="styles/normalize.css" rel="stylesheet">
-    <script src="scripts/jquery2-0-3-min.js"></script>
+    <link type="text/css" href="win/styles/normalize.css" rel="stylesheet">
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var startPos = $(".wrap_icon_banner").offset().top;
+            $(window).scroll(function() {
+                $(this).scrollTop()>startPos?$(".to_top").fadeIn():$(".to_top").fadeOut();//滚屏610时，出现toTop图标
+                if($(this).scrollTop()>=startPos){// 滚屏距离大于某个值时固定顶部，否则复位
+                    $(".wrap_icon_banner").css({
+                        position:'fixed',
+                        left:'0',
+                        top:'0',
+                        width:"100%"});
+                    if($(this).scrollTop()<1162){
+                        $(".arrow_banner").animate({left:150},10);
+                    }else if(1162<$(this).scrollTop()&&$(this).scrollTop()<1714){
+                        $(".arrow_banner").animate({left:375},10);
+                    }else if(1714<$(this).scrollTop()&&$(this).scrollTop()<2200){
+                        $(".arrow_banner").animate({left:600},10);
+                    }else if(2200<$(this).scrollTop()){
+                        $(".arrow_banner").animate({left:825},10);
+                    }
+                } else{
+                    $(".wrap_icon_banner").css({position:'static'});
+                    $(".arrow_banner").animate({left:"150px" },10)
+                }
+            });
+            $(".icon_list").children("li").click(function(){
+                $(window).scrollTop(610+$(this).index()*552);
+                $(".arrow_banner").animate({left:150+$(this).index()*225},10);
+            });
+            $(".to_top").click(function(){
+                $(window).scrollTop(0);
+            });
 
+        });
+    </script>
 </head>
 <body>
     <div id="header">
         <h1 class="logo"><a href="index.html">DST Simulation</a></h1>
     </div>
     <div id="banner">
-        <div class="txt_banner"></div>
-        <div class="icon_banner">
-            <i class="arrow_banner"></i>
-            <a name="main_win" id="main_win"></a>
-            <ul class="icon_list">
-                <li class="icon_win"><a href="#main_win"></a></li>
-                <li class="icon_mac"><a href="#main_mac"></a></li>
-                <li class="icon_comm"><a href="#main_comm"></a></li>
-                <li class="icon_inter"><a href="#main_inter"></a></li>
-            </ul>
+        <div class="wrap_txt_banner">
+            <div class="txt_banner"></div>
+        </div>
+        <div class="wrap_icon_banner">
+            <div class="icon_banner">
+                <ul class="icon_list">
+                    <li class="icon_win"></li>
+                    <li class="icon_mac"></li>
+                    <li class="icon_comm"></li>
+                    <li class="icon_inter"></li>
+                </ul>
+                <i class="arrow_banner"></i>
+            </div>
         </div>
     </div>
     <div id="main">
@@ -30,19 +67,17 @@
             <div class="wrap_txt_main">
                 <h2>Windows</h2>
                 <p>Close-to-real environment of Windows 8.1,Windows Server 2012, OS and applications.Learn or Test by doing. </p>
-                <a href="dst.html" target="_blank">Run Demo</a>
+                <a href="win/index.html" target="_blank">Run Demo</a>
             </div>
-            <a name="main_mac" id="main_mac"></a>
         </div>
         <div class="main_mac">
             <div class="wrap_txt_main">
                 <h2>Mac OS X</h2>
                 <p>A Mac in your browser. You don’t have to pay extra money to experience another world. </p>
-                <a href="#">Coming soon</a>
+                <a href="mac/index.html" target="_blank">Run Demo</a>
             </div>
         </div>
         <div class="main_comm">
-            <a name="main_comm" id="main_comm"></a>
             <div class="wrap_txt_main">
                 <h2>Command Line</h2>
                 <p>Connect to a hyper router or remote server.Type your command and get feedbackinstantly.</p>
@@ -50,7 +85,6 @@
             </div>
         </div>
         <div class="main_inter">
-            <a name="main_inter" id="main_inter"></a>
             <div class="wrap_txt_main">
                 <h2>Integration</h2>
                 <p>Embed simulation in any content. Online courses,Ebooks, Electronic magazines, you name it.</p>
@@ -62,6 +96,7 @@
         <h3><span>About us &nbsp; |&nbsp; Support&nbsp; |&nbsp; Report a problem</span></h3>
         <div class="bg_blue"></div>
     </div>
+    <div class="to_top"></div>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -71,5 +106,6 @@
       ga('create', 'UA-46792543-1', 'dst-web.github.io');
       ga('send', 'pageview');
 
-    </script></body>
+    </script>
+</body>
 </html>

@@ -1,0 +1,332 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <link type="text/css" href="styles/style.css" rel="stylesheet">
+    <link type="text/css" href="../win/styles/normalize.css" rel="stylesheet">
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="scripts/index.js"></script>
+
+</head>
+<body>
+<div id="dss-zoom-wallpaper-grid">
+
+<div class="dss-mac-window" win="0">
+    <div class="dss-win-outer">
+        <div class="dss-win-inner">
+            <div class="dss-title-bar">
+                <ul class="dss-win-btn-bar">
+                    <li><i class="dss-icon16-close-win" title="关闭"></i></li>
+                    <li><i class="dss-icon16-min-win" title="最小化"></i></li>
+                    <li><i class="dss-icon16-max-win" title="最大化"></i></li>
+                </ul>
+                <div class="dss-win-title"><i class="dss-icon16-win-title"></i><span>我的所有文件</span></div>
+                <div class="dss-btn-group">
+                    <button type="button" class="dss-btn"><i class="dss-icon16-prev"></i></button>
+                    <button type="button" class="dss-btn"><i class="dss-icon16-next"></i></button>
+                </div>
+                <div class="dss-btn-group">
+                    <button type="button" class="dss-btn"><i class="dss-icon16-list-rec"></i></button>
+                    <button type="button" class="dss-btn"><i class="dss-icon16-list-li"></i></button>
+                    <button type="button" class="dss-btn"><i class="dss-icon16-list-vol"></i></button>
+                    <button type="button" class="dss-btn"><i class="dss-icon16-list-vols"></i></button>
+                </div>
+                <div class="dss-wrap-search">
+                    <i class="dss-icon16-search"></i>
+                    <input type="text" class="dss-search"/>
+                </div>
+            </div>
+            <div class="dss-content dss-files"></div>
+            <div class="dss-win-resize-t"></div>
+            <div class="dss-win-resize-r"></div>
+            <div class="dss-win-resize-b"></div>
+            <div class="dss-win-resize-l"></div>
+            <div class="dss-win-resize-rt"></div>
+            <div class="dss-win-resize-rb"></div>
+            <div class="dss-win-resize-lb"></div>
+            <div class="dss-win-resize-lt"></div>
+        </div>
+    </div>
+</div>
+<div class="dss-mac-window" win="4">
+    <div class="dss-win-outer">
+        <div class="dss-win-inner">
+            <div class="dss-title-bar">
+                <div class="dss-win-title"><span>欢迎使用"邮件"</span></div>
+            </div>
+            <div class="dss-content dss-mail-bg">
+                <div class="dss-mail-txt-bg"></div>
+                <div class="dss-mail-txt">
+                     <h2>欢迎使用"邮件"</h2>
+                     <h3>您将被引导设置完成邮件账户的步骤。</h3>
+                     <h3>要开始设置，请提供以下信息：</h3>
+                     <form>
+                         <ul>
+                             <li><label><span>全名:</span><input type="text"/></label></li>
+                             <li><label><span>电子邮件地址:</span><input type="text"/></label></li>
+                             <li><label><span>密码:</span><input type="text"/></label></li>
+                         </ul>
+                     </form>
+
+                 </div>
+                <div class="dss-wrap-mail-btn"><i class="dss-btn-round20 dss-icon16-mail-help"></i>
+                    <div class="dss-btns">
+                        <button type="button" class="dss-btn dss-btn86 dss-btn-cancel"><i class="dss-btn-mail-cancel"></i>取消</button>
+                        <button type="button" class="dss-btn dss-btn86"><i class="dss-btn-mail-back"></i>返回</button>
+                        <button type="button" class="dss-btn dss-btn86 dss-btn-blue"><i class="dss-btn-mail-continue"></i>继续</button>
+                    </div>
+                </div>
+            </div>
+            <div class="dss-win-resize-t"></div>
+            <div class="dss-win-resize-r"></div>
+            <div class="dss-win-resize-b"></div>
+            <div class="dss-win-resize-l"></div>
+            <div class="dss-win-resize-rt"></div>
+            <div class="dss-win-resize-rb"></div>
+            <div class="dss-win-resize-lb"></div>
+            <div class="dss-win-resize-lt"></div>
+        </div>
+    </div>
+</div>
+
+<div id="dss-wrap-dock">
+    <div class="dss-lt-corner"></div>
+    <div id="dss-dock-bg">
+        <div id="dss-dock">
+            <img src="images/Finder.png"/><img src="images/Launchpad.png"/><img src="images/Expose.png"/><img src="images/Safari.png"/><img src="images/Mail.png"/><img src="images/Contacts.png"/><img src="images/Calendar Empty.png"/><img src="images/Notes.png"/><img src="images/Messages.png"/><img src="images/FaceTime.png"/><img src="images/PhotoBooth.png"/><img src="images/iTunes.png"/><img src="images/App Store.png"/><img src="images/System Preferences.png"/><img src="images/Trash Empty.png"/>
+        </div>
+    </div>
+    <div id="dss-dock-bottom"></div>
+    <div class="dss-rt-corner"></div>
+</div>
+<div id="dss-main-menu">
+<ul class="dss-main-menu-lt">
+    <li class="dss-dsk-logo"><i class="dss-icon24-logo"></i>
+        <ul class="dss-sub-menu">
+            <li>关于本机</li>
+            <li>软件更新...</li>
+            <li>App Store...</li>
+            <li class="dss-menu-line"></li>
+            <li>系统偏好设置...</li>
+            <li>Dock<i class="dss-icon24-arrow-rt"></i>
+                <ul class="dss-sub-menu">
+                    <li>启用隐藏<span>⌘D</span></li>
+                    <li>关闭放大</li>
+                    <li class="dss-menu-line"></li>
+                    <li>放在左边</li>
+                    <li>放在底部</li>
+                    <li>放在右边</li>
+                    <li class="dss-menu-line"></li>
+                    <li>Dock偏好设置...</li>
+                </ul>
+            </li>
+            <li class="dss-menu-line"></li>
+            <li>最近使用的项目<i class="dss-icon24-arrow-rt"></i>
+                <ul class="dss-sub-menu">
+                    <li class="dss-menu-title">应用程序</li>
+                    <li>App Store</li>
+                    <li>Face Time</li>
+                    <li>iTunes</li>
+                    <li>Photo Booth</li>
+                    <li>Safari</li>
+                    <li>备忘录</li>
+                    <li>提醒事项</li>
+                    <li>通讯录</li>
+                    <li>系统偏好设置</li>
+                    <li>邮件</li>
+                    <li class="dss-menu-line"></li>
+                    <li class="dss-menu-title">文稿</li>
+                    <li>VMware Tools.pkg</li>
+                    <li>关于下载</li>
+                    <li class="dss-menu-line"></li>
+                    <li>服务器</li>
+                    <li class="dss-menu-line"></li>
+                    <li>清除菜单</li>
+                </ul>
+            </li>
+            <li class="dss-menu-line"></li>
+            <li>强制退出...<span>⌘</span></li>
+            <li class="dss-menu-line"></li>
+            <li>睡眠</li>
+            <li>重新启动...</li>
+            <li>关机</li>
+            <li class="dss-menu-line"></li>
+            <li>注销 userName<span>⌘Q</span></li>
+        </ul>
+    </li>
+    <li>Finder
+        <ul class="dss-sub-menu">
+            <li>关于Finder</li>
+            <li class="dss-menu-line"></li>
+            <li>偏好设置<span>⌘</span></li>
+            <li class="dss-menu-line"></li>
+            <li>清倒废纸篓...<span>⌘</span></li>
+            <li>安全清倒废纸篓..</li>
+            <li class="dss-menu-line"></li>
+            <li>服务</li>
+            <li class="dss-menu-line"></li>
+            <li>隐藏Finder<span>⌘H</span></li>
+            <li>隐藏其他<span>⌘H</span></li>
+            <li>全部显示</li>
+        </ul>
+    </li>
+    <li>文件
+        <ul class="dss-sub-menu">
+            <li>新建Finder窗口<span>⌘N</span></li>
+            <li>新建文件夹<span>⌘N</span></li>
+            <li>用所选项目新建文件夹<span>⌘N</span></li>
+            <li>新建智能文件夹<span>⌘N</span></li>
+            <li>新建刻录文件夹</li>
+            <li>打开<span>⌘O</span></li>
+            <li>打开方式<i class="dss-icon24-arrow-rt"></i> </li>
+            <li>打印<span>⌘P</span></li>
+            <li>关闭窗口<span>⌘W</span></li>
+            <li class="dss-menu-line"></li>
+            <li>显示简介<span>⌘|</span></li>
+            <li class="dss-menu-line"></li>
+            <li>压缩</li>
+            <li class="dss-menu-line"></li>
+            <li>复制<span>⌘D</span></li>
+            <li>制作替身<span>⌘L</span></li>
+            <li>快速查看<span>⌘Y</span></li>
+            <li>显示原身<span>⌘R</span></li>
+            <li>添加到边栏<span>⌘T</span></li>
+            <li class="dss-menu-line"></li>
+            <li>移到废纸篓<span>⌘</span></li>
+            <li>推出<span>⌘E</span></li>
+            <li>将"桌面"刻录至光盘..</li>
+            <li class="dss-menu-line"></li>
+            <li>查找<span>⌘F</span></li>
+            <li class="dss-menu-line"></li>
+            <li>标签</li>
+        </ul>
+    </li>
+    <li>编辑
+        <ul class="dss-sub-menu">
+            <li>撤销移动2项<span>⌘Z</span></li>
+            <li>重做<span>⌘Z</span></li>
+            <li class="dss-menu-line"></li>
+            <li>剪切<span>⌘X</span></li>
+            <li>拷贝<span>⌘C</span></li>
+            <li>粘贴<span>⌘V</span></li>
+            <li>全选<span>⌘A</span></li>
+            <li class="dss-menu-line"></li>
+            <li>显示剪贴板</li>
+            <li class="dss-menu-line"></li>
+            <li>开始听写...<span>fn fn</span></li>
+            <li>特殊字符...</li>
+        </ul>
+    </li>
+    <li>显示
+        <ul class="dss-sub-menu">
+            <li>为图标<span>⌘1</span></li>
+            <li>为列表<span>⌘2</span></li>
+            <li>为分栏<span>⌘3</span></li>
+            <li>为Cover Flow<span>⌘4</span></li>
+            <li class="dss-menu-line"></li>
+            <li>整理</li>
+            <li>整理方式按</li>
+            <li>排序方式按</li>
+            <li class="dss-menu-line"></li>
+            <li>隐藏路径栏</li>
+            <li>隐藏状态栏<span>⌘/</span></li>
+            <li>隐藏边栏<span>⌘S</span></li>
+            <li class="dss-menu-line"></li>
+            <li>工具栏<span>⌘T</span></li>
+            <li>自定工具栏...</li>
+            <li class="dss-menu-line"></li>
+            <li>查看显示选项<span>⌘J</span></li>
+        </ul>
+    </li>
+    <li>前往
+        <ul class="dss-sub-menu">
+            <li>向后<span>⌘[</span></li>
+            <li>向前<span>⌘]</span></li>
+            <li>上层文件夹<span>⌘↑</span></li>
+            <li class="dss-menu-line"></li>
+            <li>我的所有文件<span>↑⌘F</span></li>
+            <li>文稿<span>↑⌘O</span></li>
+            <li>桌面<span>↑⌘D</span></li>
+            <li>下载<span>↑⌘L</span></li>
+            <li>个人<span>⌘H</span></li>
+            <li>电脑<span>↑⌘C</span></li>
+            <li>网络<span>↑⌘K</span></li>
+            <li>应用程序<span>↑⌘A</span></li>
+            <li>实用工具<span>↑⌘U</span></li>
+            <li class="dss-menu-line"></li>
+            <li>最近使用的文件夹<i class="dss-icon24-arrow-rt"></i> </li>
+            <li class="dss-menu-line"></li>
+            <li>前往文件夹...<span>↑⌘G</span></li>
+            <li>链接服务器...<span>⌘K</span></li>
+        </ul>
+    </li>
+    <li>窗口
+        <ul class="dss-sub-menu">
+            <li>最小化<span>⌘M</span></li>
+            <li>缩放</li>
+            <li>循环显示窗口<span>⌘`</span></li>
+            <li class="dss-menu-line"></li>
+            <li>前置全部窗口</li>
+        </ul>
+    </li>
+    <li class="dss-menu-help">帮助
+        <ul class="dss-sub-menu">
+            <li>搜索<input type="text"/></li>
+            <li>帮助中心</li>
+        </ul>
+    </li>
+</ul>
+<ul class="dss-main-menu-rt">
+    <li class="dss-menu-time"><i class="dss-icon24-re"></i>
+        <ul class="dss-sub-menu">
+            <li>Time Machine尚未配置</li>
+            <li class="dss-menu-line"></li>
+            <li>浏览其它备份磁盘</li>
+            <li class="dss-menu-line"></li>
+            <li>打开Time Machine偏好设置</li>
+        </ul>
+    </li>
+    <li><i class="dss-icon24-volume"></i>
+        <ul class="dss-sub-menu">
+            <li>
+                <div class="dss-slider">
+                    <div class="dss-slider-bar"></div>
+                    <div class="dss-slider-point"></div>
+                </div>
+            </li>
+        </ul>
+    </li>
+    <li class="dss-main-menu-rt-t">周四 下午14:00
+        <ul class="dss-sub-menu dss-sub-menu-width">
+            <li>2014年1月15日星期三</li>
+            <li class="dss-menu-line"></li>
+            <li>以模拟方式显示</li>
+            <li>以数码方式显示</li>
+            <li class="dss-menu-line"></li>
+            <li>打开日期与实践偏好设置</li>
+        </ul>
+    </li>
+    <li class="dss-main-menu-rt-search"><i class="dss-icon24-search"></i>
+        <ul class="dss-sub-menu">
+            <li>Spotlight<input type="text"/></li>
+        </ul>
+    </li>
+    <li><i class="dss-icon24-notice"></i></li>
+</ul>
+</div>
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46792543-1', 'dst-web.github.io');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>                                                                           
