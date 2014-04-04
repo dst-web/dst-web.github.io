@@ -1,61 +1,65 @@
 <ds-question>
-
+   <ds-question-item order="1" current="true" status="right" starttime="" endtime="" submittime="" lastmodifytime="" qcontext="{{'question.stem'|translate}}"></ds-question-item>
+   <ds-question-item order="2" status="right" qcontext="在桌面上新建一个记事本"></ds-question-item>
+   <ds-question-item order="3" status="wrong" qcontext="清空回收站"></ds-question-item>
+   <ds-question-item order="4" status="uncommitted" qcontext="卸载马花疼软件"></ds-question-item>
+   <ds-question-item order="5" status="undo" qcontext="题目未定"></ds-question-item>
 </ds-question>
 <ds-desktop ng-controller="WinEventCtrl">
   <ds-pages>
     <ds-page visible="false" name="default" id="dss-zoom-wallpaper-grid" xmlns="http://www.w3.org/1999/html">
       <ds-desktop-icons draggable="false">
         <ds-desktop-icon-item id="" icon="dss-icon48-usern" name="user" type="快捷方式"></ds-desktop-icon-item>
-        <ds-desktop-icon-item  id="ds-desktop-icon-item-computer" icon="dss-icon48-comp" name="计算机" type="快捷方式"></ds-desktop-icon-item>
-        <ds-desktop-icon-item  id="" icon="dss-icon48-inte" name="网络" type="快捷方式"></ds-desktop-icon-item>
-        <ds-desktop-icon-item  id="" icon="dss-icon48-rec" name="回收站" type="快捷方式"></ds-desktop-icon-item>
-        <ds-desktop-icon-item  id="ds-desktop-icon-item-note" icon="dss-icon48-note" name="说明" type="快捷方式"></ds-desktop-icon-item>
+        <ds-desktop-icon-item  id="ds-desktop-icon-item-computer" icon="dss-icon48-comp" name="{{'windows.computer'|translate}}" type="快捷方式"></ds-desktop-icon-item>
+        <ds-desktop-icon-item  id="" icon="dss-icon48-inte" name="{{'windows.network'|translate}}" type="快捷方式"></ds-desktop-icon-item>
+        <ds-desktop-icon-item  id="" icon="dss-icon48-rec" name="{{'windows.recycle'|translate}}" type="快捷方式"></ds-desktop-icon-item>
+        <ds-desktop-icon-item  id="ds-desktop-icon-item-note" icon="dss-icon48-note" name="{{'windows.readme'|translate}}" type="快捷方式"></ds-desktop-icon-item>
       </ds-desktop-icons>
-      <ds-window ng-controller="WindowCtrl" icon="dss-icon16-computer" id="dsswin-mycomputer" name="我的计算机" width="700" height="450" visible="false" position="center center" minimize="true" maximize="true" close="true">
+      <ds-window ng-controller="WindowCtrl" icon="dss-icon16-computer" id="dsswin-mycomputer" name="{{'windows.computer'|translate}}" width="700" height="450" visible="false" position="center center" minimize="true" maximize="true" close="true">
         <ds-menubar>
-            <ds-menu-item id="menubar-file" name="文件" shortcut="F" enabled="true" submenu="true">
-                <ds-menu-item id="menbar-file-createnew" name="新建(N)"shortcut="ctrl+N" enabled="true"></ds-menu-item>
-                <ds-menu-item id="menbar-file-open"  name="打开(O)" shortcut="ctrl+O" icon="dss-icon16-open">
-                    <ds-menu-item name="index.html" shortcut="ctrl+O" icon="dss-icon16-open"></ds-menu-item>
+            <ds-menu-item id="menubar-file" name="{{'menu.file'|translate}}" shortcut="F" enabled="true" submenu="true">
+                <ds-menu-item id="menbar-file-createnew" name="{{'menu.new'|translate}}"shortcut="Ctrl+N" enabled="true"></ds-menu-item>
+                <ds-menu-item id="menbar-file-open"  name="{{'menu.openWithDot'|translate}}" shortcut="Ctrl+O" icon="dss-icon16-open">
+                    <ds-menu-item name="index.html" shortcut="Ctrl+O" icon="dss-icon16-open"></ds-menu-item>
                     <ds-menu-item name="home.html"></ds-menu-item>
                     <ds-menu-item name="page.html"></ds-menu-item>
                     <ds-menu-item name="my.html"></ds-menu-item>
                 </ds-menu-item>
-                <ds-menu-item id="menbar-file-save" name="保存(S)"  shortcut="ctrl+S" ></ds-menu-item>
-                <ds-menu-item id="menbar-file-saveas" name="另存为(A)"></ds-menu-item>
+                <ds-menu-item id="menbar-file-save" name="{{'menu.save'|translate}}"  shortcut="Ctrl+S" ></ds-menu-item>
+                <ds-menu-item id="menbar-file-saveas" name="{{'menu.saveAs'|translate}}"></ds-menu-item>
                 <ds-separator></ds-separator>
-                <ds-menu-item id="menbar-file-pageset" name="页面设置(U)" enabled="false"></ds-menu-item>
-                <ds-menu-item id="menbar-file-print" name="打印(P)" shortcut="ctrl+P" enabled="false" icon="dss-icon16-pr"></ds-menu-item>
+                <ds-menu-item id="menbar-file-pageset" name="{{'menu.pageSetup'|translate}}" enabled="false"></ds-menu-item>
+                <ds-menu-item id="menbar-file-print" name="{{'menu.print'|translate}}" shortcut="Ctrl+P" enabled="false" icon="dss-icon16-pr"></ds-menu-item>
                 <ds-separator></ds-separator>
-                <ds-menu-item id="menbar-file-exit"  name="退出(X)"></ds-menu-item>
+                <ds-menu-item id="menbar-file-exit"  name="{{'menu.exit'|translate}}"></ds-menu-item>
             </ds-menu-item>
-            <ds-menu-item id="menubar-edit" name="编辑" shortcut="E" enabled="true" submenu="true">
-                <ds-menu-item id="menbar-file-undo" name="撤销(U)"  shortcut="ctrl+Z" enabled="true"></ds-menu-item>
+            <ds-menu-item id="menubar-edit" name="{{'menu.edit'|translate}}" shortcut="E" enabled="true" submenu="true">
+                <ds-menu-item id="menbar-file-undo" name="{{'menu.undo'|translate}}"  shortcut="Ctrl+Z" enabled="true"></ds-menu-item>
                 <ds-separator></ds-separator>
-                <ds-menu-item id="menbar-file-cut" name="剪切(T)"  shortcut="ctrl+X" enabled="true"></ds-menu-item>
-                <ds-menu-item id="menbar-file-copy" name="复制(C)"  shortcut="ctrl+C" enabled="true"></ds-menu-item>
-                <ds-menu-item id="menbar-file-paste" name="粘贴(P)"  shortcut="ctrl+V" enabled="true"></ds-menu-item>
-                <ds-menu-item id="menbar-file-delete" name="删除(L)"  shortcut="ctrl+L" enabled="true"></ds-menu-item>
+                <ds-menu-item id="menbar-file-cut" name="{{'menu.cut'|translate}}"  shortcut="Ctrl+X" enabled="true"></ds-menu-item>
+                <ds-menu-item id="menbar-file-copy" name="{{'menu.copy'|translate}}"  shortcut="Ctrl+C" enabled="true"></ds-menu-item>
+                <ds-menu-item id="menbar-file-paste" name="{{'menu.paste'|translate}}"  shortcut="Ctrl+V" enabled="true"></ds-menu-item>
+                <ds-menu-item id="menbar-file-delete" name="{{'menu.delete'|translate}}"  shortcut="Ctrl+L" enabled="true"></ds-menu-item>
                 <ds-separator></ds-separator>
-                <ds-menu-item id="menbar-file-find" name="查找(F)"  shortcut="ctrl+F" enabled="true"></ds-menu-item>
-                <ds-menu-item id="menbar-file-findnext" name="查找下一个(N)"  shortcut="F3" enabled="true"></ds-menu-item>
-                <ds-menu-item id="menbar-file-replace" name="替换(R)"  shortcut="ctrl+H" enabled="true"></ds-menu-item>
-                <ds-menu-item id="menbar-file-goto" name="转到(G)"  shortcut="ctrl+G" enabled="true"></ds-menu-item>
+                <ds-menu-item id="menbar-file-find" name="{{'menu.find'|translate}}"  shortcut="Ctrl+F" enabled="true"></ds-menu-item>
+                <ds-menu-item id="menbar-file-findnext" name="{{'menu.findNext'|translate}}"  shortcut="F3" enabled="true"></ds-menu-item>
+                <ds-menu-item id="menbar-file-replace" name="{{'menu.replace'|translate}}"  shortcut="Ctrl+H" enabled="true"></ds-menu-item>
+                <ds-menu-item id="menbar-file-goto" name="{{'menu.goto'|translate}}"  shortcut="Ctrl+G" enabled="true"></ds-menu-item>
                 <ds-separator></ds-separator>
-                <ds-menu-item id="menbar-file-selectall" name="全选(A)"  shortcut="ctrl+A" enabled="true"></ds-menu-item>
-                <ds-menu-item id="menbar-file-datetime" name="时间/日期(D)"  shortcut="F5" enabled="true"></ds-menu-item>
+                <ds-menu-item id="menbar-file-selectall" name="{{'menu.selectAll'|translate}}"  shortcut="Ctrl+A" enabled="true"></ds-menu-item>
+                <ds-menu-item id="menbar-file-datetime" name="{{'menu.timeDate'|translate}}"  shortcut="F5" enabled="true"></ds-menu-item>
             </ds-menu-item>
-            <ds-menu-item id="menubar-format" name="格式" shortcut="O" width="158" enabled="false" submenu="true">
-                <ds-menu-item id="menbar-file-autolinewrap"  name="自动换行(W)"></ds-menu-item>
-                <ds-menu-item id="menbar-file-font"  name="字体(F)"></ds-menu-item>
+            <ds-menu-item id="menubar-format" name="{{'menu.format'|translate}}" shortcut="O" width="158" enabled="false" submenu="true">
+                <ds-menu-item id="menbar-file-autolinewrap"  name="{{'menu.wordWrap'|translate}}"></ds-menu-item>
+                <ds-menu-item id="menbar-file-font"  name="{{'menu.font'|translate}}"></ds-menu-item>
             </ds-menu-item>
-            <ds-menu-item id="menubar-view" name="查看" shortcut="V" width="158" enabled="true" submenu="true">
-                <ds-menu-item id="menbar-file-status"  name="状态栏(S)"></ds-menu-item>
+            <ds-menu-item id="menubar-view" name="{{'menu.view'|translate}}" shortcut="V" width="158" enabled="true" submenu="true">
+                <ds-menu-item id="menbar-file-status"  name="{{'menu.statusBar'|translate}}"></ds-menu-item>
             </ds-menu-item>
-            <ds-menu-item id="menubar-help" name="帮助" shortcut="H" width="158" enabled="true" submenu="true">
-                <ds-menu-item id="menbar-file-findhelp"  name="查看帮助(H)"></ds-menu-item>
+            <ds-menu-item id="menubar-help" name="{{'menu.help'|translate}}" shortcut="H" width="158" enabled="true" submenu="true">
+                <ds-menu-item id="menbar-file-findhelp"  name="{{'menu.viewHelp'|translate}}"></ds-menu-item>
                 <ds-separator></ds-separator>
-                <ds-menu-item id="menbar-file-about"  name="关于(A)"></ds-menu-item>
+                <ds-menu-item id="menbar-file-about"  name="{{'menu.aboutWindows'|translate}}"></ds-menu-item>
             </ds-menu-item>
         </ds-menubar>
         <ds-toolbar font="{'font-size':'12px','line-height':'14px','font-family':'\'Times New Roman\',Georgia,Serif'}">
@@ -75,48 +79,54 @@
         <ds-toolbar class="dss-wrap-tool2-bar">
             <ds-toolbar-item icon="dss-ico-tool-bck"></ds-toolbar-item>
             <ds-toolbar-item icon="dss-ico-tool-for"></ds-toolbar-item>
-            <ds-toolbar-item icon="dss-ico-tool-sub" subtool="true">
-                <ds-toolbar-item icon="dss-t-ct-act" name="库"></ds-toolbar-item>
-                <ds-toolbar-item name="家庭组"></ds-toolbar-item>
-                <ds-toolbar-item name="视频"></ds-toolbar-item>
-                <ds-toolbar-item name="文档"></ds-toolbar-item>
+            <ds-toolbar-item icon="dss-ico-tool-sub" subtool="true" width="200px">
+                <ds-toolbar-item icon="dss-t-ct-act" name="{{'windows.libraries'|translate}}"></ds-toolbar-item>
+                <ds-toolbar-item name="{{'windows.homegroup'|translate}}"></ds-toolbar-item>
+                <ds-toolbar-item name="{{'windows.videos'|translate}}"></ds-toolbar-item>
+                <ds-toolbar-item name="{{'windows.documents'|translate}}"></ds-toolbar-item>
             </ds-toolbar-item>
             <ds-toolbar-item icon="dss-ico-tool-up"></ds-toolbar-item>
             <ds-toolbar-item>
                 <ds-pathnavigation width="300"></ds-pathnavigation>
             </ds-toolbar-item>
             <ds-toolbar-item>
-                <ds-search width="320" placeholder="搜索库"></ds-search>
+                <ds-search width="320" placeholder="{{'windows.searchComputer'|translate}}"></ds-search>
             </ds-toolbar-item>
         </ds-toolbar>
         <ds-spliter direction="horizontal" is-folding="false">
             <ds-spliter-panel>
                 <ds-tree type="WIN8" swapAll="false">
-                    <ds-tree-item name="收藏夹"  id="dssTreeItemFavorite" icon="dss-icon16-favorite" title="" href="" target="_self">
-                        <ds-tree-item name="下载" id="tree-item-download" icon="dss-icon16-download"></ds-tree-item>
-                        <ds-tree-item name="桌面" icon="dss-icon16-desktop"></ds-tree-item>
-                        <ds-tree-item name="访问的位置" icon=""></ds-tree-item>
+                    <ds-tree-item name="{{'windows.favorites'|translate}}"  id="dssTreeItemFavorite" icon="dss-icon16-favorite" title="" href="" target="_self">
+                        <ds-tree-item name="{{'windows.desktop'|translate}}" icon="dss-icon16-desktop"></ds-tree-item>
+                        <ds-tree-item name="{{'windows.download'|translate}}" id="tree-item-download" icon="dss-icon16-download"></ds-tree-item>
+                        <ds-tree-item name="{{'windows.recentPlaces'|translate}}" icon=""></ds-tree-item>
                     </ds-tree-item>
-                    <ds-tree-item name="库" icon="dss-icon16-ku">
-                        <ds-tree-item name="视频" icon="">
-                            <ds-tree-item name="我的视频" icon=""></ds-tree-item>
-                            <ds-tree-item name="公用视频" icon=""></ds-tree-item>
+                    <ds-tree-item name="{{'windows.libraries'|translate}}" icon="dss-icon16-library">
+                        <ds-tree-item name="{{'windows.videos'|translate}}" icon="dss-icon16-video">
+                            <ds-tree-item name="{{'windows.myVideo'|translate}}" icon="dss-icon16-videos"></ds-tree-item>
+                            <ds-tree-item name="{{'windows.publicVideo'|translate}}" icon=""></ds-tree-item>
                         </ds-tree-item>
-                        <ds-tree-item name="图片" icon="">
-                            <ds-tree-item name="我的图片" icon=""></ds-tree-item>
-                            <ds-tree-item name="公用图片" icon=""></ds-tree-item>
+                        <ds-tree-item name="{{'windows.pictures'|translate}}" icon="dss-icon16-op">
+                            <ds-tree-item name="{{'windows.myPictures'|translate}}" icon=""></ds-tree-item>
+                            <ds-tree-item name="{{'windows.publicPictures'|translate}}" icon=""></ds-tree-item>
                         </ds-tree-item>
-                        <ds-tree-item name="文档" icon=""></ds-tree-item>
-                        <ds-tree-item name="音乐" icon=""></ds-tree-item>
+                        <ds-tree-item name="{{'windows.documents'|translate}}" icon="dss-icon16-doc">
+                            <ds-tree-item name="{{'windows.myDocuments'|translate}}" icon="dss-icon16-docs"></ds-tree-item>
+                            <ds-tree-item name="{{'windows.publicDocuments'|translate}}" icon=""></ds-tree-item>
+                        </ds-tree-item>
+                        <ds-tree-item name="{{'windows.music'|translate}}" icon="dss-icon16-music">
+                            <ds-tree-item name="{{'windows.myMusic'|translate}}" icon="dss-icon16-musics"></ds-tree-item>
+                            <ds-tree-item name="{{'windows.publicMusic'|translate}}" icon=""></ds-tree-item>
+                        </ds-tree-item>
                     </ds-tree-item>
-                    <ds-tree-item name="家庭组" icon="">
+                    <ds-tree-item name="{{'windows.homegroup'|translate}}" icon="">
                         <ds-tree-item name="Node 02" icon=""></ds-tree-item>
                     </ds-tree-item>
-                    <ds-tree-item name="计算机" id="dssTreeItemDesktop" icon="dss-icon16-computer">
-                        <ds-tree-item ds-bind-popmenu="popmenu110" name="本地磁盘(C:)" icon="dss-icon16-disk-c"></ds-tree-item>
-                        <ds-tree-item ds-bind-popmenu="popmenu110" name="本地磁盘(D:)" icon="dss-icon16-disk-d"></ds-tree-item>
+                    <ds-tree-item name="{{'windows.computer'|translate}}" id="dssTreeItemDesktop" icon="dss-icon16-computer">
+                        <ds-tree-item ds-bind-popmenu="popmenu110" name="{{'windows.localDisk'|translate}}(C:)" icon="dss-icon16-disk-c"></ds-tree-item>
+                        <ds-tree-item ds-bind-popmenu="popmenu110" name="{{'windows.localDisk'|translate}}(D:)" icon="dss-icon16-disk-d"></ds-tree-item>
                     </ds-tree-item>
-                    <ds-tree-item name="网络" icon="">
+                    <ds-tree-item name="{{'windows.network'|translate}}" icon="">
                         <ds-tree-item name="Node 02" icon=""></ds-tree-item>
                         <ds-tree-item name="Node 02" icon=""></ds-tree-item>
                     </ds-tree-item>
@@ -128,9 +138,9 @@
                   <ds-panel>
                       <ds-list type="mid">
                           <ds-list-group>
-                            <ds-list-item icon="dss-icon48-download" name="下载" id="" type="快捷方式" modifytime="2014/2/13 17:22" filesize="121.k"></ds-list-item>
-                            <ds-list-item icon="dss-icon48-desktop" name="桌面" id="" type="快捷方式" modifytime="2014/2/13 17:22" filesize="121.k"></ds-list-item>
-                            <ds-list-item icon="dss-icon48-visit" name="最近打开文件" id="" type="快捷方式" modifytime="2014/2/13 17:22" filesize="121.k"></ds-list-item>
+                            <ds-list-item icon="dss-icon48-download" name="{{'windows.download'|translate}}" id="" type="快捷方式" modifytime="2014/2/13 17:22" filesize="121.k"></ds-list-item>
+                            <ds-list-item icon="dss-icon48-desktop" name="{{'windows.desktop'|translate}}" id="" type="快捷方式" modifytime="2014/2/13 17:22" filesize="121.k"></ds-list-item>
+                            <ds-list-item icon="dss-icon48-visit" name="{{'windows.recentPlaces'|translate}}" id="" type="快捷方式" modifytime="2014/2/13 17:22" filesize="121.k"></ds-list-item>
                           </ds-list-group>
                           <table class="dss-list-detail">
                                <thead>
@@ -221,15 +231,14 @@
                </ds-page>
                  <ds-page id="dsPageMyComputer" visible="true">
                     <ds-panel>
-
                         <ds-list type="TILE" c="dss-disk">
-                           <ds-list-group name="硬盘">
-                               <ds-list-item ds-bind-popmenu="popmenuC" icon="dss-icon48-disk-c" name="本地磁盘(C:)" id="dss-disk-c" diskspace="75%" type="快捷方式" modifytime="2014/2/13 17:22" filesize="33 GB可用,共 120 GB"></ds-list-item>
-                               <ds-list-item ds-bind-popmenu="popmenuD" icon="dss-icon48-disk-d" name="本地磁盘(D:)" id="dss-disk-d" diskspace="17%" type="快捷方式" modifytime="2014/2/13 17:22" filesize="100 GB可用,共 120 GB"></ds-list-item>
+                           <ds-list-group name="{{'windows.hardDiskDrives'|translate}}">
+                               <ds-list-item ds-bind-popmenu="popmenuC" icon="dss-icon48-disk-c" name="{{'windows.localDisk'|translate}}(C:)" id="dss-disk-c" diskspace="75%" type="快捷方式" modifytime="2014/2/13 17:22" filesize="{{'windows.freeSizeOfDisk'|translate:'{ free:30,total:120 }'}}"></ds-list-item>
+                               <ds-list-item ds-bind-popmenu="popmenuD" icon="dss-icon48-disk-d" name="{{'windows.localDisk'|translate}}(D:)" id="dss-disk-d" diskspace="17%" type="快捷方式" modifytime="2014/2/13 17:22" filesize="{{'windows.freeSizeOfDisk'|translate:'{ free:100,total:120 }'}}"></ds-list-item>
 
-                            </ds-list-group>
-                            <ds-list-group name="移动存储的设备">
-                               <ds-list-item ds-bind-popmenu="popmenuD" icon="dss-icon48-disk-driver" name="DVD驱动器(F:)" id="" type="HRM_CCSA_X64FRE_ZH-CN_DV5" modifytime="2014/2/13 17:22" filesize="33 GB可用,共 120 GB"></ds-list-item>
+                           </ds-list-group>
+                           <ds-list-group name="{{'windows.devicesWithRemovableStorage'|translate}}">
+                               <ds-list-item ds-bind-popmenu="popmenuD" icon="dss-icon48-disk-driver" name="DVD {{'windows.driver'|translate}} (F:)" id="" type="HRM_CCSA_X64FRE_ZH-CN_DV5" modifytime="2014/2/13 17:22" filesize="{{'windows.freeSizeOfDisk'|translate:'{ free:33,total:120 }'}}"></ds-list-item>
                             </ds-list-group>
                            <table class="dss-list-detail">
                                 <thead>
@@ -322,200 +331,192 @@
             </ds-spliter-panel>
         </ds-spliter>
         <ds-statusbar>
-            <span>3个项目</span>
-            <div><a class="dss-window-view-list" title="在窗口中显示每一项的相关信息"></a><a class="dss-window-view-big" title="使用大缩略图显示项"></a></div>
+            <span>{{'windows.statusItemsTip'|translate:'{ number: "3" }'}}</span>
+            <div><i class="dss-icon16-view-list" title="在窗口中显示每一项的相关信息"></i><i class="dss-icon16-view-big" title="使用大缩略图显示项"></i></div>
         </ds-statusbar>
         <ds-popmenu id="popmenu001">
-            <ds-menu-item name="查看" icon="" shortcut="V" enabled="true">
-                <ds-menu-item id="changeListView-Super" name="超大图标" icon="" shortcut="X" enabled="true"></ds-menu-item>
-                <ds-menu-item id="changeListView-Big"  name="大图标" icon="" shortcut="R" enabled="true"></ds-menu-item>
-                <ds-menu-item id="changeListView-Mid"  name="中等图标" icon="" shortcut="M" enabled="true"></ds-menu-item>
-                <ds-menu-item id="changeListView-Small"  name="小图标" icon="" shortcut="N" enabled="true"></ds-menu-item>
-                <ds-menu-item id="changeListView-Normal"  name="列表" icon="dss-ico-choose-li" shortcut="N" enabled="true"></ds-menu-item>
-                <ds-menu-item id="changeListView-Detail"  name="详细信息" icon="" shortcut="N" enabled="true"></ds-menu-item>
-                <ds-menu-item id="changeListView-Tile"  name="平铺" icon="" shortcut="N" enabled="true"></ds-menu-item>
-                <ds-menu-item id="changeListView-Content"  name="内容" icon="" shortcut="N" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.view'|translate}}" icon="" enabled="true">
+                <ds-menu-item id="changeListView-Super" name="{{'menu.extraLargeIcons'|translate}}" icon="" enabled="true"></ds-menu-item>
+                <ds-menu-item id="changeListView-Big"  name="{{'menu.largeIcons'|translate}}" icon=""  enabled="true"></ds-menu-item>
+                <ds-menu-item id="changeListView-Mid"  name="{{'menu.mediumIcons'|translate}}" icon="" enabled="true"></ds-menu-item>
+                <ds-menu-item id="changeListView-Small"  name="{{'menu.smallIcons'|translate}}" icon="" enabled="true"></ds-menu-item>
+                <ds-menu-item id="changeListView-Normal"  name="{{'menu.list'|translate}}" icon="dss-ico-choose-li" enabled="true"></ds-menu-item>
+                <ds-menu-item id="changeListView-Detail"  name="{{'menu.details'|translate}}" icon="" enabled="true"></ds-menu-item>
+                <ds-menu-item id="changeListView-Tile"  name="{{'menu.tiles'|translate}}" icon="" enabled="true"></ds-menu-item>
+                <ds-menu-item id="changeListView-Content"  name="{{'menu.content'|translate}}" icon="" enabled="true"></ds-menu-item>
             </ds-menu-item>
-            <ds-menu-item name="排序方式" icon="" shortcut="O" enabled="true"></ds-menu-item>
-            <ds-menu-item name="分组依据" icon="" shortcut="P" enabled="false"></ds-menu-item>
-            <ds-menu-item name="刷新" icon="" shortcut="E" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.sortBy'|translate}}" icon="" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.groupBy'|translate}}" icon="" enabled="false"></ds-menu-item>
+            <ds-menu-item name="{{'menu.refresh'|translate}}" icon="" enabled="true"></ds-menu-item>
             <ds-separator></ds-separator>
-            <ds-menu-item name="粘贴" icon="" shortcut="P" enabled="true"></ds-menu-item>
-            <ds-menu-item name="粘贴快捷方式" icon="" shortcut="S" enabled="true"></ds-menu-item>
-            <ds-menu-item name="撤销重命名" icon="" shortcut="U" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.copy'|translate}}" icon="" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.pasteShortcut'|translate}}" icon="" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.undoRename'|translate}}" icon="" enabled="true"></ds-menu-item>
             <ds-separator></ds-separator>
-            <ds-menu-item name="共享" icon="" shortcut="H" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.shareWith'|translate}}" icon="" enabled="true"></ds-menu-item>
             <ds-separator></ds-separator>
-            <ds-menu-item name="新建" icon="" shortcut="W" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.new'|translate}}" icon=""  enabled="true"></ds-menu-item>
             <ds-separator></ds-separator>
-            <ds-menu-item name="属性" icon="" shortcut="R" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.properties'|translate}}" icon="" enabled="true"></ds-menu-item>
         </ds-popmenu>
         <ds-popmenu id="popmenuC">
-            <ds-menu-item name="打开"  id="" icon="" shortcut="O" enabled="true"></ds-menu-item>
-            <ds-menu-item name="在新窗口中打开"  id="" icon="" shortcut="E" enabled="true"></ds-menu-item>
-            <ds-menu-item name='固定到"开始屏幕"'  id="" icon="" shortcut="P" enabled="true"></ds-menu-item>
-            <ds-menu-item name="打开自动播放..."  id="" icon="" shortcut="Y" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.open'|translate}}"  id="" icon="" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.openInNewWindow'|translate}}"  id="" icon="" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.pinToStart'|translate}}"  id="" icon="" enabled="true"></ds-menu-item>
             <ds-separator></ds-separator>
-            <ds-menu-item name="共享"  id="" icon="" shortcut="H" enabled="true">
-                <ds-menu-item name="高级共享..."  id="" icon="" shortcut="" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.shareWith'|translate}}"  id="" icon="" enabled="true">
+                <ds-menu-item name="{{'menu.advancedSharingWithDot'|translate}}"  id="" icon="" enabled="true"></ds-menu-item>
             </ds-menu-item>
             <ds-separator></ds-separator>
-            <ds-menu-item name="格式化..."  id="formatPanC" icon="" shortcut="A" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.formatWithDot'|translate}}"  id="formatPanC" icon="" enabled="true"></ds-menu-item>
             <ds-separator></ds-separator>
-            <ds-menu-item name="复制" icon="" shortcut="C" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.copy'|translate}}" icon="" enabled="true"></ds-menu-item>
             <ds-separator></ds-separator>
-            <ds-menu-item name="创建快捷方式" icon="" shortcut="S" enabled="true"></ds-menu-item>
-            <ds-menu-item name="重命名" icon="" shortcut="M" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.createShortcut'|translate}}" icon="" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.rename'|translate}}" icon="" enabled="true"></ds-menu-item>
             <ds-separator></ds-separator>
-            <ds-menu-item name="属性" icon="" shortcut="R" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.properties'|translate}}" icon="" enabled="true"></ds-menu-item>
         </ds-popmenu>
         <ds-popmenu id="popmenuD">
-            <ds-menu-item name="打开"  id="" icon="" shortcut="O" enabled="true"></ds-menu-item>
-            <ds-menu-item name="在新窗口中打开"  id="" icon="" shortcut="E" enabled="true"></ds-menu-item>
-            <ds-menu-item name='固定到"开始屏幕"'  id="" icon="" shortcut="P" enabled="true"></ds-menu-item>
-            <ds-menu-item name="打开自动播放..."  id="" icon="" shortcut="Y" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.open'|translate}}"  id="" icon="" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.openInNewWindow'|translate}}"  id="" icon="" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.pinToStart'|translate}}"  id="" icon="" enabled="true"></ds-menu-item>
             <ds-separator></ds-separator>
-            <ds-menu-item name="共享"  id="" icon="" shortcut="H" enabled="true">
-                <ds-menu-item name="高级共享..."  id="" icon="" shortcut="" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.shareWith'|translate}}"  id="" icon="" enabled="true">
+                <ds-menu-item name="{{'menu.advancedSharingWithDot'|translate}}"  id="" icon="" enabled="true"></ds-menu-item>
             </ds-menu-item>
             <ds-separator></ds-separator>
-            <ds-menu-item name="格式化..."  id="formatPanD" icon="" shortcut="A" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.formatWithDot'|translate}}"  id="formatPanD" icon="" enabled="true"></ds-menu-item>
             <ds-separator></ds-separator>
-            <ds-menu-item name="复制" icon="" shortcut="C" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.copy'|translate}}" icon="" enabled="true"></ds-menu-item>
             <ds-separator></ds-separator>
-            <ds-menu-item name="创建快捷方式" icon="" shortcut="S" enabled="true"></ds-menu-item>
-            <ds-menu-item name="重命名" icon="" shortcut="M" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.createShortcut'|translate}}" icon="" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.rename'|translate}}" icon="" enabled="true"></ds-menu-item>
             <ds-separator></ds-separator>
-            <ds-menu-item name="属性" icon="" shortcut="R" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.properties'|translate}}" icon="" enabled="true"></ds-menu-item>
         </ds-popmenu>
         <ds-popmenu id="popmenu110">
-            <ds-menu-item name="打开"  id="" icon="" shortcut="O" enabled="true"></ds-menu-item>
-            <ds-menu-item name="在新窗口中打开"  id="" icon="" shortcut="E" enabled="true"></ds-menu-item>
-            <ds-menu-item name='固定到"开始屏幕"'  id="" icon="" shortcut="P" enabled="true"></ds-menu-item>
-            <ds-menu-item name="打开自动播放..."  id="" icon="" shortcut="Y" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.open'|translate}}"  id="" icon="" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.openInNewWindow'|translate}}"  id="" icon="" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.pinToStart'|translate}}"  id="" icon="" enabled="true"></ds-menu-item>
             <ds-separator></ds-separator>
-            <ds-menu-item name="共享"  id="" icon="" shortcut="H" enabled="true">
-                <ds-menu-item name="高级共享..."  id="" icon="" shortcut="" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.shareWith'|translate}}"  id="" icon="" enabled="true">
+                <ds-menu-item name="{{'menu.advancedSharingWithDot'|translate}}"  id="" icon="" enabled="true"></ds-menu-item>
             </ds-menu-item>
-            <ds-menu-item name="包含到库中"  id="" icon="" shortcut="I" enabled="true">
-                <ds-menu-item name="视频"  id="" icon="" shortcut="" enabled="true"></ds-menu-item>
-                <ds-menu-item name="图片"  id="" icon="" shortcut="" enabled="true"></ds-menu-item>
-                <ds-menu-item name="文档"  id="" icon="" shortcut="" enabled="true"></ds-menu-item>
-                <ds-menu-item name="音乐"  id="" icon="" shortcut="" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.includeInLibrary'|translate}}"  id="" icon=""  enabled="true">
+                <ds-menu-item name="{{'windows.videos'|translate}}" icon="dss-icon16-video"  enabled="true"></ds-menu-item>
+                <ds-menu-item name="{{'windows.pictures'|translate}}" icon="dss-icon16-op" enabled="true"></ds-menu-item>
+                <ds-menu-item name="{{'windows.documents'|translate}}" icon="dss-icon16-doc" enabled="true"></ds-menu-item>
+                <ds-menu-item name="{{'windows.music'|translate}}" icon="dss-icon16-music" enabled="true"></ds-menu-item>
                 <ds-separator></ds-separator>
-                <ds-menu-item name="创建新库"  id="" icon="" shortcut="" enabled="true"></ds-menu-item>
+                <ds-menu-item name="{{'menu.createNewLibrary'|translate}}"  id="" icon="" shortcut="" enabled="true"></ds-menu-item>
             </ds-menu-item>
             <ds-separator></ds-separator>
-            <ds-menu-item name="格式化..."  id="formatPan" icon="" shortcut="A" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.formatWithDot'|translate}}"  id="formatPanD" icon="" enabled="true"></ds-menu-item>
             <ds-separator></ds-separator>
-            <ds-menu-item name="复制" icon="" shortcut="C" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.copy'|translate}}" icon="" enabled="true"></ds-menu-item>
             <ds-separator></ds-separator>
-            <ds-menu-item name="创建快捷方式" icon="" shortcut="S" enabled="true"></ds-menu-item>
-            <ds-menu-item name="重命名" icon="" shortcut="M" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.createShortcut'|translate}}" icon="" shortcut="S" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.rename'|translate}}" icon="" enabled="true"></ds-menu-item>
             <ds-separator></ds-separator>
-            <ds-menu-item name="属性" icon="" shortcut="R" enabled="true"></ds-menu-item>
+            <ds-menu-item name="{{'menu.properties'|translate}}" icon="" enabled="true"></ds-menu-item>
         </ds-popmenu>
       </ds-window>
-      <ds-window ng-controller="WindowCtrlTwo" id="dsswin-format" name="格式化 本地磁盘(D:)" width="300" height="480" visible="false" position="center center" resizeable="false" close="true">
+      <ds-window ng-controller="WindowCtrlTwo" id="dsswin-format" name="{{'windows.format'|translate}} {{'windows.localDisk'|translate}}(D:)" width="300" height="500" visible="false" position="center center" resizeable="false" close="true">
         <ds-panel>
             <div class="dss-cont-format-d">
-                <h3>容量(P):</h3>
-                <select class="wid1">
+                <h3 class="dss-font-size13">{{'format.capacity'|translate}}:</h3>
+                <select class="dss-margin-b20 dss-width-100per">
                     <option>120 GB</option>
                 </select>
-                <h3>文件系统(F):</h3>
-                <select class="wid1">
-                    <option>NFTS(默认)</option>
+                <h3 class="dss-font-size13">{{'format.fileSystem'|translate}}:</h3>
+                <select class="dss-margin-b20 dss-width-100per">
+                    <option>NFTS({{'format.default'|translate}})</option>
                 </select>
-                <h3>分配单元大小(A):</h3>
-                <select class="wid1">
-                    <option>4096 字节</option>
+                <h3 class="dss-font-size13">{{'format.allocationUnitSize'|translate}}:</h3>
+                <select class="dss-margin-b20 dss-width-100per">
+                    <option>4096 {{'format.bytes'|translate}}</option>
                 </select>
-                <button class="dss-btn-nor">还原设备的默认值(D)</button>
-                <h3>卷标:</h3>
-                <select class="wid1">
-                    <option>新加卷</option>
-                </select>
-                <form>
+                <button class="dss-btn-nor">{{'format.restoreDefault'|translate}}</button>
+                <h3 class="dss-font-size13">{{'format.volumeLabel'|translate}}:</h3>
+                <input type="text" class="dss-margin-b20 dss-width-100per" />
+                <form class="dss-margin-b20 dss-width-100per">
                     <fieldset>
-                        <legend>格式化选项(O)</legend>
+                        <legend>{{'format.formatOptions'|translate}}</legend>
                         <ul>
-                            <li><label><input type="checkbox" checked="checked" />快速格式化</label></li>
-                            <li><label><input type="checkbox"/>创建一个MS-DOS启动盘(M)</label></li>
+                            <li><label><input type="checkbox" checked="checked" />{{'format.quickFormat'|translate}}</label></li>
+                            <li><label><input type="checkbox"/>{{'format.CreateMSDOSdisk'|translate}}</label></li>
                         </ul>
-
                     </fieldset>
                 </form>
-                <span class="dss-progress"><span></span></span>
-
+                <span class="dss-progress dss-width-100per dss-margin-b10"><span></span></span>
                 <ds-buttons>
-                    <ds-button-item name="开始" id="dss-progress-start"></ds-button-item>
-                    <ds-button-item isActive="true" name="关闭" id="dss-progress-close"></ds-button-item>
+                    <ds-button-item name="{{'btn.start'|translate}}" id="dss-progress-start"></ds-button-item>
+                    <ds-button-item isActive="true" name="{{'btn.close'|translate}}" id="dss-progress-close"></ds-button-item>
                 </ds-buttons>
             </div>
         </ds-panel>
       </ds-window>
-      <ds-window ng-controller="WindowCtrl" icon="dss-icon16-note" id="dsswin-note" name="说明" width="300" height="300" visible="false" position="100px 100px" resizeable="false" minimize="true" maximize="false" close="true">
+      <ds-window ng-controller="WindowCtrl" icon="dss-icon16-note" id="dsswin-note" name="{{'windows.readme'|translate}}" width="300" height="300" visible="false" position="100px 100px" resizeable="false" minimize="true" maximize="false" close="true">
         <ds-menubar>
-            <ds-menu-item id="menubar-file" name="文件" shortcut="F" enabled="true" submenu="true">
-                <ds-menu-item id="menbar-file-createnew" name="新建(N)"shortcut="ctrl+N" enabled="true"></ds-menu-item>
-                <ds-menu-item id="menbar-file-open"  name="打开(O)" shortcut="ctrl+O" icon="dss-icon16-open">
-                    <ds-menu-item name="index.html" shortcut="ctrl+O" icon="dss-icon16-open"></ds-menu-item>
-                    <ds-menu-item name="home.html"></ds-menu-item>
-                    <ds-menu-item name="page.html"></ds-menu-item>
-                    <ds-menu-item name="my.html"></ds-menu-item>
-                </ds-menu-item>
-                <ds-menu-item id="menbar-file-save" name="保存(S)"  shortcut="ctrl+S" ></ds-menu-item>
-                <ds-menu-item id="menbar-file-saveas" name="另存为(A)"></ds-menu-item>
-                <ds-separator></ds-separator>
-                <ds-menu-item id="menbar-file-pageset" name="页面设置(U)" enabled="false"></ds-menu-item>
-                <ds-menu-item id="menbar-file-print" name="打印(P)" shortcut="ctrl+P" enabled="false" icon="dss-icon16-pr"></ds-menu-item>
-                <ds-separator></ds-separator>
-                <ds-menu-item id="menbar-file-exit"  name="退出(X)"></ds-menu-item>
-            </ds-menu-item>
-            <ds-menu-item id="menubar-edit" name="编辑" shortcut="E" enabled="true" submenu="true">
-                <ds-menu-item id="menbar-file-undo" name="撤销(U)"  shortcut="ctrl+Z" enabled="true"></ds-menu-item>
-                <ds-separator></ds-separator>
-                <ds-menu-item id="menbar-file-cut" name="剪切(T)"  shortcut="ctrl+X" enabled="true"></ds-menu-item>
-                <ds-menu-item id="menbar-file-copy" name="复制(C)"  shortcut="ctrl+C" enabled="true"></ds-menu-item>
-                <ds-menu-item id="menbar-file-paste" name="粘贴(P)"  shortcut="ctrl+V" enabled="true"></ds-menu-item>
-                <ds-menu-item id="menbar-file-delete" name="删除(L)"  shortcut="ctrl+L" enabled="true"></ds-menu-item>
-                <ds-separator></ds-separator>
-                <ds-menu-item id="menbar-file-find" name="查找(F)"  shortcut="ctrl+F" enabled="true"></ds-menu-item>
-                <ds-menu-item id="menbar-file-findnext" name="查找下一个(N)"  shortcut="F3" enabled="true"></ds-menu-item>
-                <ds-menu-item id="menbar-file-replace" name="替换(R)"  shortcut="ctrl+H" enabled="true"></ds-menu-item>
-                <ds-menu-item id="menbar-file-goto" name="转到(G)"  shortcut="ctrl+G" enabled="true"></ds-menu-item>
-                <ds-separator></ds-separator>
-                <ds-menu-item id="menbar-file-selectall" name="全选(A)"  shortcut="ctrl+A" enabled="true"></ds-menu-item>
-                <ds-menu-item id="menbar-file-datetime" name="时间/日期(D)"  shortcut="F5" enabled="true"></ds-menu-item>
-            </ds-menu-item>
-            <ds-menu-item id="menubar-format" name="格式" shortcut="O" width="158" enabled="false" submenu="true">
-                <ds-menu-item id="menbar-file-autolinewrap"  name="自动换行(W)"></ds-menu-item>
-                <ds-menu-item id="menbar-file-font"  name="字体(F)"></ds-menu-item>
-            </ds-menu-item>
-            <ds-menu-item id="menubar-view" name="查看" shortcut="V" width="158" enabled="true" submenu="true">
-                <ds-menu-item id="menbar-file-status"  name="状态栏(S)"></ds-menu-item>
-            </ds-menu-item>
-            <ds-menu-item id="menubar-help" name="帮助" shortcut="H" width="158" enabled="true" submenu="true">
-                <ds-menu-item id="menbar-file-findhelp"  name="查看帮助(H)"></ds-menu-item>
-                <ds-separator></ds-separator>
-                <ds-menu-item id="menbar-file-about"  name="关于(A)"></ds-menu-item>
-            </ds-menu-item>
+          <ds-menu-item id="menubar-file" name="{{'menu.file'|translate}}" shortcut="F" enabled="true" submenu="true">
+              <ds-menu-item id="menbar-file-createnew" name="{{'menu.new'|translate}}"shortcut="Ctrl+N" enabled="true"></ds-menu-item>
+              <ds-menu-item id="menbar-file-open"  name="{{'menu.openWithDot'|translate}}" shortcut="Ctrl+O" icon="dss-icon16-open">
+                  <ds-menu-item name="index.html" shortcut="Ctrl+O" icon="dss-icon16-open"></ds-menu-item>
+                  <ds-menu-item name="home.html"></ds-menu-item>
+                  <ds-menu-item name="page.html"></ds-menu-item>
+                  <ds-menu-item name="my.html"></ds-menu-item>
+              </ds-menu-item>
+              <ds-menu-item id="menbar-file-save" name="{{'menu.save'|translate}}"  shortcut="Ctrl+S" ></ds-menu-item>
+              <ds-menu-item id="menbar-file-saveas" name="{{'menu.saveAs'|translate}}"></ds-menu-item>
+              <ds-separator></ds-separator>
+              <ds-menu-item id="menbar-file-pageset" name="{{'menu.pageSetup'|translate}}" enabled="false"></ds-menu-item>
+              <ds-menu-item id="menbar-file-print" name="{{'menu.print'|translate}}" shortcut="Ctrl+P" enabled="false" icon="dss-icon16-pr"></ds-menu-item>
+              <ds-separator></ds-separator>
+              <ds-menu-item id="menbar-file-exit"  name="{{'menu.exit'|translate}}"></ds-menu-item>
+          </ds-menu-item>
+          <ds-menu-item id="menubar-edit" name="{{'menu.edit'|translate}}" shortcut="E" enabled="true" submenu="true">
+              <ds-menu-item id="menbar-file-undo" name="{{'menu.undo'|translate}}"  shortcut="Ctrl+Z" enabled="true"></ds-menu-item>
+              <ds-separator></ds-separator>
+              <ds-menu-item id="menbar-file-cut" name="{{'menu.cut'|translate}}"  shortcut="Ctrl+X" enabled="true"></ds-menu-item>
+              <ds-menu-item id="menbar-file-copy" name="{{'menu.copy'|translate}}"  shortcut="Ctrl+C" enabled="true"></ds-menu-item>
+              <ds-menu-item id="menbar-file-paste" name="{{'menu.paste'|translate}}"  shortcut="Ctrl+V" enabled="true"></ds-menu-item>
+              <ds-menu-item id="menbar-file-delete" name="{{'menu.delete'|translate}}"  shortcut="Ctrl+L" enabled="true"></ds-menu-item>
+              <ds-separator></ds-separator>
+              <ds-menu-item id="menbar-file-find" name="{{'menu.find'|translate}}"  shortcut="Ctrl+F" enabled="true"></ds-menu-item>
+              <ds-menu-item id="menbar-file-findnext" name="{{'menu.findNext'|translate}}"  shortcut="F3" enabled="true"></ds-menu-item>
+              <ds-menu-item id="menbar-file-replace" name="{{'menu.replace'|translate}}"  shortcut="Ctrl+H" enabled="true"></ds-menu-item>
+              <ds-menu-item id="menbar-file-goto" name="{{'menu.goto'|translate}}"  shortcut="Ctrl+G" enabled="true"></ds-menu-item>
+              <ds-separator></ds-separator>
+              <ds-menu-item id="menbar-file-selectall" name="{{'menu.selectAll'|translate}}"  shortcut="Ctrl+A" enabled="true"></ds-menu-item>
+              <ds-menu-item id="menbar-file-datetime" name="{{'menu.timeDate'|translate}}"  shortcut="F5" enabled="true"></ds-menu-item>
+          </ds-menu-item>
+          <ds-menu-item id="menubar-format" name="{{'menu.format'|translate}}" shortcut="O" width="158" enabled="false" submenu="true">
+              <ds-menu-item id="menbar-file-autolinewrap"  name="{{'menu.wordWrap'|translate}}"></ds-menu-item>
+              <ds-menu-item id="menbar-file-font"  name="{{'menu.font'|translate}}"></ds-menu-item>
+          </ds-menu-item>
+          <ds-menu-item id="menubar-view" name="{{'menu.view'|translate}}" shortcut="V" width="158" enabled="true" submenu="true">
+              <ds-menu-item id="menbar-file-status"  name="{{'menu.statusBar'|translate}}"></ds-menu-item>
+          </ds-menu-item>
+          <ds-menu-item id="menubar-help" name="{{'menu.help'|translate}}" shortcut="H" width="158" enabled="true" submenu="true">
+              <ds-menu-item id="menbar-file-findhelp"  name="{{'menu.viewHelp'|translate}}"></ds-menu-item>
+              <ds-separator></ds-separator>
+              <ds-menu-item id="menbar-file-about"  name="{{'menu.aboutNotepad'|translate}}"></ds-menu-item>
+          </ds-menu-item>
         </ds-menubar>
         <ds-panel>
           桌面上只有"计算机"和"新建记事本"两个图标绑定双击处理.
         </ds-panel>
       </ds-window>
 
-      <ds-dialog ng-controller="WindowCtrlTwo" id="dssDialog-confirm-01" icon="dss-icon32-help" name="格式化 本地磁盘(D:)" visible="false" width="410" height="130" btncancel="dssDialog-confirm-btnCancel01" btnok="dssDialog-confirm-btnOk01">
-          警告：格式化将删除该磁盘上的所有数据。<br/>
-          若想格式化该磁盘，请单击"确定"。若想退出，请单击"取消"。
+      <ds-dialog ng-controller="WindowCtrlTwo" id="dssDialog-confirm-01" icon="dss-icon32-help" name="{{'windows.format'|translate}} {{'windows.localDisk'|translate}}(D:)" visible="false" width="410" height="130" btncancel="dssDialog-confirm-btnCancel01" btnok="dssDialog-confirm-btnOk01">
+          {{'format.formatWarning'|translate}}
       </ds-dialog>
-      <ds-dialog ng-controller="WindowCtrlTwo" id="dssDialog-box-01" icon="dss-icon32-about" name="正在格式化 本地磁盘(D:)" visible="false" width="350" height="120" btnok="dssDialog-box-btnOk02">
-          格式化完毕!
+      <ds-dialog ng-controller="WindowCtrlTwo" id="dssDialog-box-01" icon="dss-icon32-about" name="{{'windows.formatting'|translate}} {{'windows.localDisk'|translate}}(D:)" visible="false" width="350" height="120" btnok="dssDialog-box-btnOk02">
+          {{'format.formatFinish'|translate}}
       </ds-dialog>
-      <ds-dialog ng-controller="WindowCtrlTwo" id="dssDialog-box-02" name="无法格式化该卷" visible="false" width="350" height="130" btnok="dssDialog-box-btnOk03">
-          它包含正在使用的Windows版本。格式化该卷可能会导致计算机停止工作。<a>格式化磁盘和驱动器常见问题解答(FAQ)</a>
+      <ds-dialog ng-controller="WindowCtrlTwo" id="dssDialog-box-02" name="{{'windows.cannotFormat'|translate}}" visible="false" width="380" height="130" btnok="dssDialog-box-btnOk03">
+          {{'format.cannotFormatThisDisk'|translate}}<a>{{'format.formatDiskFAQ'|translate}}</a>
       </ds-dialog>
 
       <ds-taskbar>
@@ -524,8 +525,8 @@
         <ds-taskbar-item type="lock" icon="dss-icon32-new-f" name="窗口1-我的电脑"></ds-taskbar-item>
         <ds-taskbar-item type="lock" icon="dss-icon32-about" name="窗口1-我的电脑"></ds-taskbar-item>
 
-        <ds-taskbar-item type="default" icon="dss-icon32-computer" name="我的计算机" targetid="dsswin-mycomputer"></ds-taskbar-item>
-        <ds-taskbar-item type="default" icon="dss-icon32-note" name="说明" targetid="dsswin-note"></ds-taskbar-item>
+        <ds-taskbar-item type="default" icon="dss-icon32-computer" name="{{'windows.computer'|translate}}" targetid="dsswin-mycomputer"></ds-taskbar-item>
+        <ds-taskbar-item type="default" icon="dss-icon32-note" name="{{'windows.readme'|translate}}" targetid="dsswin-note"></ds-taskbar-item>
 
 
         <ds-taskbar-item type="tray" icon="dss-icon16-arr-lt"></ds-taskbar-item>
@@ -537,26 +538,26 @@
     <ds-page visible="true" name="metro" id="dss-page">
       <ds-win-metro username="DST">
         <ds-metro-group>
-          <ds-metro-item id="dss-return-win" name="桌面" icon="dss-pic-to-dst"></ds-metro-item>
-          <ds-metro-item name="控制面板" icon="dss-icon80-contr"></ds-metro-item>
-          <ds-metro-item name="照片" icon="dss-icon80-pic"></ds-metro-item>
-          <ds-metro-item name="日历" icon="dss-icon80-date"></ds-metro-item>
-          <ds-metro-item name="人脉" icon="dss-icon80-buddy"></ds-metro-item>
-          <ds-metro-item name="消息" icon="dss-icon80-news" small="true"></ds-metro-item>
-          <ds-metro-item name="IE" icon="dss-icon80-ie" small="true"></ds-metro-item>
-          <ds-metro-item name="地图" icon="dss-icon80-map"></ds-metro-item>
-          <ds-metro-item name="应用商店" icon="dss-icon80-ap"></ds-metro-item>
+          <ds-metro-item id="dss-return-win" name="{{'metro.desktop'|translate}}" icon="dss-pic-to-dst"></ds-metro-item>
+          <ds-metro-item name="{{'metro.controlPanel'|translate}}" icon="dss-icon80-contr"></ds-metro-item>
+          <ds-metro-item name="{{'metro.photo'|translate}}" icon="dss-icon80-pic"></ds-metro-item>
+          <ds-metro-item name="{{'metro.calendar'|translate}}" icon="dss-icon80-date"></ds-metro-item>
+          <ds-metro-item name="{{'metro.friend'|translate}}" icon="dss-icon80-buddy"></ds-metro-item>
+          <ds-metro-item name="{{'metro.message'|translate}}" icon="dss-icon80-news" small="true"></ds-metro-item>
+          <ds-metro-item name="{{'metro.ie'|translate}}" icon="dss-icon80-ie" small="true"></ds-metro-item>
+          <ds-metro-item name="{{'metro.map'|translate}}" icon="dss-icon80-map"></ds-metro-item>
+          <ds-metro-item name="{{'metro.store'|translate}}" icon="dss-icon80-ap"></ds-metro-item>
         </ds-metro-group>
         <ds-metro-group>
-          <ds-metro-item name="旅游" icon="dss-pic-trav"></ds-metro-item>
-          <ds-metro-item name="照片" icon="dss-icon80-pic"></ds-metro-item>
-          <ds-metro-item name="音乐" icon="dss-icon80-musi" small="true"></ds-metro-item>
-          <ds-metro-item name="游戏" icon="dss-icon80-game" small="true"></ds-metro-item>
-          <ds-metro-item name="照片" icon="dss-icon80-date"></ds-metro-item>
-          <ds-metro-item name="相机" icon="dss-icon80-camera"></ds-metro-item>
-          <ds-metro-item name="视频" icon="dss-icon80-vedio"></ds-metro-item>
-          <ds-metro-item name="云盘" icon="dss-icon80-sky"></ds-metro-item>
-          <ds-metro-item name="旅游" icon="dss-icon80-trav"></ds-metro-item>
+          <ds-metro-item name="{{'metro.travel'|translate}}" icon="dss-pic-trav"></ds-metro-item>
+          <ds-metro-item name="{{'metro.photo'|translate}}" icon="dss-icon80-pic"></ds-metro-item>
+          <ds-metro-item name="{{'metro.music'|translate}}" icon="dss-icon80-musi" small="true"></ds-metro-item>
+          <ds-metro-item name="{{'metro.game'|translate}}" icon="dss-icon80-game" small="true"></ds-metro-item>
+          <ds-metro-item name="{{'metro.calendar'|translate}}" icon="dss-icon80-date"></ds-metro-item>
+          <ds-metro-item name="{{'metro.camera'|translate}}" icon="dss-icon80-camera"></ds-metro-item>
+          <ds-metro-item name="{{'metro.video'|translate}}" icon="dss-icon80-vedio"></ds-metro-item>
+          <ds-metro-item name="{{'metro.skyDrive'|translate}}" icon="dss-icon80-sky"></ds-metro-item>
+          <ds-metro-item name="{{'metro.travel'|translate}}" icon="dss-icon80-trav"></ds-metro-item>
         </ds-metro-group>
         <ds-metro-group>
           <ds-metro-item name="病毒隔离区" icon="dss-icon80-virus" small="true"></ds-metro-item>
