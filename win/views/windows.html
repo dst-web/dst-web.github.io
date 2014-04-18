@@ -1,9 +1,9 @@
 <ds-question>
    <ds-question-item order="1" current="true" status="right" starttime="" endtime="" submittime="" lastmodifytime="" qcontext="{{'question.stem'|translate}}"></ds-question-item>
-   <ds-question-item order="2" status="right" qcontext="在桌面上新建一个记事本"></ds-question-item>
-   <ds-question-item order="3" status="wrong" qcontext="清空回收站"></ds-question-item>
-   <ds-question-item order="4" status="uncommitted" qcontext="卸载马花疼软件"></ds-question-item>
-   <ds-question-item order="5" status="undo" qcontext="题目未定"></ds-question-item>
+   <ds-question-item order="2" status="right" qcontext="-TODO"></ds-question-item>
+   <ds-question-item order="3" status="wrong" qcontext="-TODO"></ds-question-item>
+   <ds-question-item order="4" status="uncommitted" qcontext="-TODO"></ds-question-item>
+   <ds-question-item order="5" status="undo" qcontext="-TODO"></ds-question-item>
 </ds-question>
 <ds-desktop ng-controller="WinEventCtrl">
   <ds-pages>
@@ -13,10 +13,9 @@
         <ds-desktop-icon-item  id="ds-desktop-icon-item-computer" icon="dss-icon48-comp" name="{{'windows.computer'|translate}}" type="快捷方式"></ds-desktop-icon-item>
         <ds-desktop-icon-item  id="" icon="dss-icon48-inte" name="{{'windows.network'|translate}}" type="快捷方式"></ds-desktop-icon-item>
         <ds-desktop-icon-item  id="" icon="dss-icon48-rec" name="{{'windows.recycle'|translate}}" type="快捷方式"></ds-desktop-icon-item>
-        <ds-desktop-icon-item  id="ds-desktop-icon-item-note" icon="dss-icon48-note" name="{{'windows.readme'|translate}}" type="快捷方式"></ds-desktop-icon-item>
       </ds-desktop-icons>
-      <ds-window ng-controller="WindowCtrl" icon="dss-icon16-computer" id="dsswin-mycomputer" name="{{'windows.computer'|translate}}" width="700" height="450" visible="false" position="center center" minimize="true" maximize="true" close="true">
-        <ds-menubar>
+      <ds-window ng-controller="WindowCtrl" icon="dss-icon16-computer" id="dsswin-mycomputer" name="{{'windows.computer'|translate}}" width="700" height="450" visible="false" position="center center" minimize="true" maximize="true" closeable="true">
+        <ds-menubar ng-show="1===2" >
             <ds-menu-item id="menubar-file" name="{{'menu.file'|translate}}" shortcut="F" enabled="true" submenu="true">
                 <ds-menu-item id="menbar-file-createnew" name="{{'menu.new'|translate}}"shortcut="Ctrl+N" enabled="true"></ds-menu-item>
                 <ds-menu-item id="menbar-file-open"  name="{{'menu.openWithDot'|translate}}" shortcut="Ctrl+O" icon="dss-icon16-open">
@@ -62,7 +61,73 @@
                 <ds-menu-item id="menbar-file-about"  name="{{'menu.aboutWindows'|translate}}"></ds-menu-item>
             </ds-menu-item>
         </ds-menubar>
-        <ds-toolbar font="{'font-size':'12px','line-height':'14px','font-family':'\'Times New Roman\',Georgia,Serif'}">
+        <ds-menutab>
+           <ds-tab name="{{'tab.computer'| translate}}">
+               <ds-tab-group name="{{'tab.location'| translate}}">
+                   <li class="dss-fix-wid"><i class="dss-icon32-per"></i>{{'tab.properties'| translate}}</li>
+                   <li class="dss-fix-wid"><i class="dss-icon32-bt-file"></i>{{'tab.open'| translate}}</li>
+                   <li class="dss-fix-wid"><i class="dss-icon32-rn"></i>{{'tab.rename'| translate}}</li>
+               </ds-tab-group>
+               <ds-tab-group name="{{'tab.network'| translate}}">
+                   <li class="dss-fix-wid"><i class="dss-icon32-visit-media"></i>{{'tab.accessMedia'| translate}}</li>
+                   <li class="dss-fix-wid"><i class="dss-icon32-drive"></i>{{'tab.mapNetworkDrive'| translate}}</li>
+                   <li class="dss-fix-wid"><i class="dss-icon32-add-pos"></i>{{'tab.addANetworkLocation'| translate}}</li>
+               </ds-tab-group>
+               <ds-tab-group name="{{'tab.system'| translate}}">
+                   <li class="dss-fix-wid"><i class="dss-icon32-ctr"></i>{{'tab.openControlPanel'| translate}}</li>
+                   <ds-tab-group-items>
+                       <li><i class="dss-icon16-uninstall"></i>{{'tab.uninstallOrChangeAProgram'| translate}}</li>
+                       <li><i class="dss-icon16-sys-per"></i>{{'tab.systemProperties'| translate}}</li>
+                       <li><i class="dss-icon16-adm"></i>{{'tab.manage'| translate}}</li>
+                   </ds-tab-group-items>
+               </ds-tab-group>
+           </ds-tab>
+           <ds-tab name="{{'tab.view'| translate}}">
+               <ds-tab-group name="{{'tab.panes'| translate}}">
+                   <li class="dss-fix-wid"><i class="dss-icon32-nav-grid"></i>{{'tab.navigationPane'| translate}}</li>
+                   <ds-tab-group-items>
+                       <li><i class="dss-icon16-preview-grid"></i>{{'tab.previewPane'| translate}}</li>
+                       <li><i class="dss-icon16-detail-grid"></i>{{'tab.detailPane'| translate}}</li>
+                   </ds-tab-group-items>
+               </ds-tab-group>
+               <ds-tab-group name="{{'tab.layout'| translate}}">
+                   <ds-tab-group-items>
+                       <li><i class="dss-icon16-supbig-icon"></i>{{'tab.extraLargeIcons'| translate}}</li>
+                       <li><i class="dss-icon16-small-icon"></i>{{'tab.smallIcons'| translate}}</li>
+                       <li><i class="dss-icon16-tile-icon"></i>{{'tab.tiles'| translate}}</li>
+                   </ds-tab-group-items>
+                   <ds-tab-group-items>
+                       <li><i class="dss-icon16-view-big"></i>{{'tab.largeIcons'| translate}}</li>
+                       <li><i class="dss-icon16-list-icon"></i>{{'tab.list'| translate}}</li>
+                       <li><i class="dss-icon16-cont-icon"></i>{{'tab.content'| translate}}</li>
+                   </ds-tab-group-items>
+                   <ds-tab-group-items>
+                       <li><i class="dss-icon16-mid-icon"></i>{{'tab.mediumIcons'| translate}}</li>
+                       <li><i class="dss-icon16-view-list"></i>{{'tab.details'| translate}}</li>
+                   </ds-tab-group-items>
+               </ds-tab-group>
+               <ds-tab-group name="{{'tab.currentView'| translate}}">
+                   <li class="dss-fix-wid"><i class="dss-icon32-arrange-mode"></i>{{'tab.sortBy'| translate}}</li>
+                   <ds-tab-group-items>
+                       <li><i class="dss-icon16-group"></i>{{'tab.groupBy'| translate}}</li>
+                       <li><i class="dss-icon16-add-row"></i>{{'tab.addColumns'| translate}}</li>
+                       <li><i class="dss-icon16-row"></i>{{'tab.sizeAllColumnsToFit'| translate}}</li>
+                   </ds-tab-group-items>
+               </ds-tab-group>
+               <ds-tab-group name="{{'tab.showOrHide'| translate}}">
+                   <ds-tab-group-items>
+                       <li><input type="checkbox"/>{{'tab.itemCheckBoxes'| translate}}</li>
+                       <li><input type="checkbox"/>{{'tab.fileNameExtensions'| translate}}</li>
+                       <li><input type="checkbox"/>{{'tab.hiddenItems'| translate}}</li>
+                   </ds-tab-group-items>
+                   <li class="dss-fix-wid"><i class="dss-icon32-hide-all dss-icon-block"></i>{{'tab.hideSelectedItems'| translate}}</li>
+               </ds-tab-group>
+               <ds-tab-group name="">
+                   <li><i class="dss-icon32-option dss-icon-block"></i>{{'tab.options'| translate}}</li>
+               </ds-tab-group>
+           </ds-tab>
+        </ds-menutab>
+        <ds-toolbar ng-show="1===2" font="{'font-size':'12px','line-height':'14px','font-family':'\'Times New Roman\',Georgia,Serif'}">
             <ds-toolbar-item icon="dss-ico-tool-pro" id="dss-ico-tool-pro" tooltip="新建"></ds-toolbar-item>
             <ds-toolbar-item icon="dss-ico-tool-new" enabled="false" tooltip="打开"></ds-toolbar-item>
             <ds-toolbar-item icon="dss-ico-tool-back" tooltip="返回"></ds-toolbar-item>
@@ -99,7 +164,7 @@
                     <ds-tree-item name="{{'windows.favorites'|translate}}"  id="dssTreeItemFavorite" icon="dss-icon16-favorite" title="" href="" target="_self">
                         <ds-tree-item name="{{'windows.desktop'|translate}}" icon="dss-icon16-desktop"></ds-tree-item>
                         <ds-tree-item name="{{'windows.download'|translate}}" id="tree-item-download" icon="dss-icon16-download"></ds-tree-item>
-                        <ds-tree-item name="{{'windows.recentPlaces'|translate}}" icon=""></ds-tree-item>
+                        <ds-tree-item name="{{'windows.recentPlaces'|translate}}" icon="dss-icon16-visit"></ds-tree-item>
                     </ds-tree-item>
                     <ds-tree-item name="{{'windows.libraries'|translate}}" icon="dss-icon16-library">
                         <ds-tree-item name="{{'windows.videos'|translate}}" icon="dss-icon16-video">
@@ -107,7 +172,7 @@
                             <ds-tree-item name="{{'windows.publicVideo'|translate}}" icon=""></ds-tree-item>
                         </ds-tree-item>
                         <ds-tree-item name="{{'windows.pictures'|translate}}" icon="dss-icon16-op">
-                            <ds-tree-item name="{{'windows.myPictures'|translate}}" icon=""></ds-tree-item>
+                            <ds-tree-item name="{{'windows.myPictures'|translate}}" icon="dss-icon16-ops"></ds-tree-item>
                             <ds-tree-item name="{{'windows.publicPictures'|translate}}" icon=""></ds-tree-item>
                         </ds-tree-item>
                         <ds-tree-item name="{{'windows.documents'|translate}}" icon="dss-icon16-doc">
@@ -119,16 +184,15 @@
                             <ds-tree-item name="{{'windows.publicMusic'|translate}}" icon=""></ds-tree-item>
                         </ds-tree-item>
                     </ds-tree-item>
-                    <ds-tree-item name="{{'windows.homegroup'|translate}}" icon="">
-                        <ds-tree-item name="Node 02" icon=""></ds-tree-item>
+                    <ds-tree-item name="{{'windows.homegroup'|translate}}" icon="dss-icon16-family">
+                        <ds-tree-item name="DST_WEB" icon="dss-icon16-user"></ds-tree-item>
                     </ds-tree-item>
                     <ds-tree-item name="{{'windows.computer'|translate}}" id="dssTreeItemDesktop" icon="dss-icon16-computer">
                         <ds-tree-item ds-bind-popmenu="popmenu110" name="{{'windows.localDisk'|translate}}(C:)" icon="dss-icon16-disk-c"></ds-tree-item>
                         <ds-tree-item ds-bind-popmenu="popmenu110" name="{{'windows.localDisk'|translate}}(D:)" icon="dss-icon16-disk-d"></ds-tree-item>
                     </ds-tree-item>
-                    <ds-tree-item name="{{'windows.network'|translate}}" icon="">
-                        <ds-tree-item name="Node 02" icon=""></ds-tree-item>
-                        <ds-tree-item name="Node 02" icon=""></ds-tree-item>
+                    <ds-tree-item name="{{'windows.network'|translate}}" icon="dss-icon16-inter">
+                        <ds-tree-item name="VM-PC" icon="dss-icon16-computer"></ds-tree-item>
                     </ds-tree-item>
                 </ds-tree>
             </ds-spliter-panel>
@@ -138,90 +202,37 @@
                   <ds-panel>
                       <ds-list type="mid">
                           <ds-list-group>
-                            <ds-list-item icon="dss-icon48-download" name="{{'windows.download'|translate}}" id="" type="快捷方式" modifytime="2014/2/13 17:22" filesize="121.k"></ds-list-item>
-                            <ds-list-item icon="dss-icon48-desktop" name="{{'windows.desktop'|translate}}" id="" type="快捷方式" modifytime="2014/2/13 17:22" filesize="121.k"></ds-list-item>
-                            <ds-list-item icon="dss-icon48-visit" name="{{'windows.recentPlaces'|translate}}" id="" type="快捷方式" modifytime="2014/2/13 17:22" filesize="121.k"></ds-list-item>
+                            <ds-list-item icon="dss-icon48-download" name="{{'windows.download'|translate}}" id="" type="{{'windows.shortcut'|translate}}" modifytime="2014/2/13 17:22" filesize="121.k"></ds-list-item>
+                            <ds-list-item icon="dss-icon48-desktop" name="{{'windows.desktop'|translate}}" id="" type="{{'windows.shortcut'|translate}}" modifytime="2014/2/13 17:22" filesize="121.k"></ds-list-item>
+                            <ds-list-item icon="dss-icon48-visit" name="{{'windows.recentPlaces'|translate}}" id="" type="{{'windows.shortcut'|translate}}" modifytime="2014/2/13 17:22" filesize="121.k"></ds-list-item>
                           </ds-list-group>
+
                           <table class="dss-list-detail">
                                <thead>
                                <tr>
-                                   <th><span>名称<i class="dss-ico-sort-arrow"></i><i class="dss-ico-list-arrow"></i><i class="dss-list-split"></i></span></th>
-                                   <th><span>修改日期<i class="dss-ico-sort-arrow"></i><i class="dss-ico-list-arrow"></i><i class="dss-list-split"></i></span></th>
-                                   <th><span>类型<i class="dss-ico-sort-arrow"></i><i class="dss-ico-list-arrow"></i><i class="dss-list-split"></i></span></th>
-                                   <th><span>大小<i class="dss-ico-sort-arrow"></i><i class="dss-ico-list-arrow"></i><i class="dss-list-split"></i></span></th>
+                                   <th><span>{{'windows.name'|translate}}<i class="dss-ico-sort-arrow-up"></i><i class="dss-ico-list-arrow"></i><i class="dss-list-split"></i></span></th>
+                                   <th><span>{{'windows.dateModified'|translate}}<i class="dss-ico-sort-arrow-up"></i><i class="dss-ico-list-arrow"></i><i class="dss-list-split"></i></span></th>
+                                   <th><span>{{'windows.type'|translate}}<i class="dss-ico-sort-arrow-up"></i><i class="dss-ico-list-arrow"></i><i class="dss-list-split"></i></span></th>
+                                   <th><span>{{'windows.size'|translate}}<i class="dss-ico-sort-arrow-up"></i><i class="dss-ico-list-arrow"></i><i class="dss-list-split"></i></span></th>
                                </tr>
                                </thead>
                                <tbody>
                                <tr>
-                                   <td><span><i class="dss-icon16-download"></i>下载</span></td>
+                                   <td><span><i class="dss-icon16-file"></i>{{'windows.download'|translate}}</span></td>
                                    <td><span>2014/1/3 15:40</span></td>
-                                   <td><span>快捷方式</span></td>
-                                   <td><span>98 KB</span></td>
-                               </tr>
-                               <tr>
-                                   <td><span><i class="dss-icon16-desktop"></i>桌面</span></td>
-                                   <td><span>2014/3/1 13:44</span></td>
-                                   <td><span>文件夹二</span></td>
-                                   <td><span>1782 KB</span></td>
-                               </tr>
-                               <tr>
-                                   <td><span><i class="dss-icon16-visit"></i>最近打开的文件</span></td>
-                                   <td><span>2013/11/3 15:01</span></td>
-                                   <td><span>快捷方式</span></td>
-                                   <td><span>1983 KB</span></td>
-                               </tr>
-                               <tr>
-                                   <td><span><i class="dss-icon16-file"></i>下载</span></td>
-                                   <td><span>2014/1/3 15:40</span></td>
-                                   <td><span>快捷方式</span></td>
-                                   <td><span>87 KB</span></td>
-                               </tr>
-                               <tr>
-                                   <td><span><i class="dss-icon16-file"></i>桌面</span></td>
-                                   <td><span>2014/3/1 13:44</span></td>
-                                   <td><span>文件夹2</span></td>
-                                   <td><span>1042 KB</span></td>
-                               </tr>
-                               <tr>
-                                   <td><span><i class="dss-icon16-file"></i>最近打开的文件最近打开的文件</span></td>
-                                   <td><span>2013/11/3 15:01</span></td>
-                                   <td><span>快捷方式</span></td>
-                                   <td><span>1923 KB</span></td>
-                               </tr>
-                               <tr>
-                                   <td><span><i class="dss-icon16-file"></i>下载最近打开的文件</span></td>
-                                   <td><span>2014/1/3 15:40</span></td>
-                                   <td><span>快捷方式</span></td>
-                                   <td><span>72 KB</span></td>
-                               </tr>
-                               <tr>
-                                   <td><span><i class="dss-icon16-file"></i>桌面最近打开的文件</span></td>
-                                   <td><span>2014/3/1 13:44</span></td>
-                                   <td><span>文件夹1</span></td>
-                                   <td><span>1042 KB</span></td>
-                               </tr>
-                               <tr>
-                                   <td><span><i class="dss-icon16-file"></i>最近打开的文件最近打开的文件</span></td>
-                                   <td><span>2013/11/3 15:01</span></td>
-                                   <td><span>快捷方式a</span></td>
-                                   <td><span>1323 KB</span></td>
-                               </tr>
-                               <tr>
-                                   <td><span><i class="dss-icon16-file"></i>下载</span></td>
-                                   <td><span>2014/1/3 15:40</span></td>
-                                   <td><span>快捷方式b</span></td>
+                                   <td><span>{{'windows.shortcut'|translate}}</span></td>
                                    <td><span>132 KB</span></td>
                                </tr>
                                <tr>
-                                   <td><span><i class="dss-icon16-file"></i>桌面</span></td>
+                                   <td><span><i class="dss-icon16-file"></i>{{'windows.desktop'|translate}}</span></td>
                                    <td><span>2014/3/1 13:44</span></td>
-                                   <td><span>文件夹一</span></td>
+                                   <td><span>{{'windows.shortcut'|translate}}</span></td>
                                    <td><span>1242 KB</span></td>
                                </tr>
                                <tr>
-                                   <td><span><i class="dss-icon16-file"></i>最近打开的文件</span></td>
+                                   <td><span><i class="dss-icon16-file"></i>{{'windows.recentPlaces'|translate}}</span></td>
                                    <td><span>2013/11/3 15:01</span></td>
-                                   <td><span>快捷方式</span></td>
+                                   <td><span>{{'windows.shortcut'|translate}}</span></td>
                                    <td><span>1123 KB</span></td>
                                </tr>
                                </tbody>
@@ -233,8 +244,8 @@
                     <ds-panel>
                         <ds-list type="TILE" c="dss-disk">
                            <ds-list-group name="{{'windows.hardDiskDrives'|translate}}">
-                               <ds-list-item ds-bind-popmenu="popmenuC" icon="dss-icon48-disk-c" name="{{'windows.localDisk'|translate}}(C:)" id="dss-disk-c" diskspace="75%" type="快捷方式" modifytime="2014/2/13 17:22" filesize="{{'windows.freeSizeOfDisk'|translate:'{ free:30,total:120 }'}}"></ds-list-item>
-                               <ds-list-item ds-bind-popmenu="popmenuD" icon="dss-icon48-disk-d" name="{{'windows.localDisk'|translate}}(D:)" id="dss-disk-d" diskspace="17%" type="快捷方式" modifytime="2014/2/13 17:22" filesize="{{'windows.freeSizeOfDisk'|translate:'{ free:100,total:120 }'}}"></ds-list-item>
+                               <ds-list-item ds-bind-popmenu="popmenuC" icon="dss-icon48-disk-c" name="{{'windows.localDisk'|translate}}(C:)" id="dss-disk-c" diskspace="75%" type="{{'windows.shortcut'|translate}}" modifytime="2014/2/13 17:22" filesize="{{'windows.freeSizeOfDisk'|translate:'{ free:30,total:120 }'}}"></ds-list-item>
+                               <ds-list-item ds-bind-popmenu="popmenuD" icon="dss-icon48-disk-d" name="{{'windows.localDisk'|translate}}(D:)" id="dss-disk-d" diskspace="17%" type="{{'windows.shortcut'|translate}}" modifytime="2014/2/13 17:22" filesize="{{'windows.freeSizeOfDisk'|translate:'{ free:100,total:120 }'}}"></ds-list-item>
 
                            </ds-list-group>
                            <ds-list-group name="{{'windows.devicesWithRemovableStorage'|translate}}">
@@ -422,7 +433,7 @@
             <ds-menu-item name="{{'menu.properties'|translate}}" icon="" enabled="true"></ds-menu-item>
         </ds-popmenu>
       </ds-window>
-      <ds-window ng-controller="WindowCtrlTwo" id="dsswin-format" name="{{'windows.format'|translate}} {{'windows.localDisk'|translate}}(D:)" width="300" height="500" visible="false" position="center center" resizeable="false" close="true">
+      <ds-window ng-controller="WindowCtrlTwo" id="dsswin-format" name="{{'windows.format'|translate}} {{'windows.localDisk'|translate}}(D:)" width="300" height="500" visible="false" position="center center" resizeable="false" closeable="true">
         <ds-panel>
             <div class="dss-cont-format-d">
                 <h3 class="dss-font-size13">{{'format.capacity'|translate}}:</h3>
@@ -457,7 +468,7 @@
             </div>
         </ds-panel>
       </ds-window>
-      <ds-window ng-controller="WindowCtrl" icon="dss-icon16-note" id="dsswin-note" name="{{'windows.readme'|translate}}" width="300" height="300" visible="false" position="100px 100px" resizeable="false" minimize="true" maximize="false" close="true">
+      <ds-window ng-controller="WindowCtrl" icon="dss-icon16-note" id="dsswin-note" name="{{'windows.readme'|translate}}" width="300" height="300" visible="false" position="100px 100px" resizeable="false" minimize="true" maximize="false" closeable="true">
         <ds-menubar>
           <ds-menu-item id="menubar-file" name="{{'menu.file'|translate}}" shortcut="F" enabled="true" submenu="true">
               <ds-menu-item id="menbar-file-createnew" name="{{'menu.new'|translate}}"shortcut="Ctrl+N" enabled="true"></ds-menu-item>
@@ -509,13 +520,13 @@
         </ds-panel>
       </ds-window>
 
-      <ds-dialog ng-controller="WindowCtrlTwo" id="dssDialog-confirm-01" icon="dss-icon32-help" name="{{'windows.format'|translate}} {{'windows.localDisk'|translate}}(D:)" visible="false" width="410" height="130" btncancel="dssDialog-confirm-btnCancel01" btnok="dssDialog-confirm-btnOk01">
+      <ds-dialog ng-controller="WindowCtrlTwo" id="dssDialog-confirm-01" icon="dss-icon32-warning" name="{{'windows.format'|translate}} {{'windows.localDisk'|translate}}(D:)" visible="false" width="410" height="130" btncancel="dssDialog-confirm-btnCancel01" btnok="dssDialog-confirm-btnOk01">
           {{'format.formatWarning'|translate}}
       </ds-dialog>
       <ds-dialog ng-controller="WindowCtrlTwo" id="dssDialog-box-01" icon="dss-icon32-about" name="{{'windows.formatting'|translate}} {{'windows.localDisk'|translate}}(D:)" visible="false" width="350" height="120" btnok="dssDialog-box-btnOk02">
           {{'format.formatFinish'|translate}}
       </ds-dialog>
-      <ds-dialog ng-controller="WindowCtrlTwo" id="dssDialog-box-02" name="{{'windows.cannotFormat'|translate}}" visible="false" width="380" height="130" btnok="dssDialog-box-btnOk03">
+      <ds-dialog ng-controller="WindowCtrlTwo" id="dssDialog-box-02" name="{{'windows.cannotFormat'|translate}}" visible="false" width="380" height="150" btnok="dssDialog-box-btnOk03">
           {{'format.cannotFormatThisDisk'|translate}}<a>{{'format.formatDiskFAQ'|translate}}</a>
       </ds-dialog>
 
@@ -555,11 +566,11 @@
           <ds-metro-item name="{{'metro.game'|translate}}" icon="dss-icon80-game" small="true"></ds-metro-item>
           <ds-metro-item name="{{'metro.calendar'|translate}}" icon="dss-icon80-date"></ds-metro-item>
           <ds-metro-item name="{{'metro.camera'|translate}}" icon="dss-icon80-camera"></ds-metro-item>
-          <ds-metro-item name="{{'metro.video'|translate}}" icon="dss-icon80-vedio"></ds-metro-item>
+          <ds-metro-item name="{{'metro.video'|translate}}" icon="dss-icon80-video"></ds-metro-item>
           <ds-metro-item name="{{'metro.skyDrive'|translate}}" icon="dss-icon80-sky"></ds-metro-item>
           <ds-metro-item name="{{'metro.travel'|translate}}" icon="dss-icon80-trav"></ds-metro-item>
         </ds-metro-group>
-        <ds-metro-group>
+        <ds-metro-group ng-show="1===2">
           <ds-metro-item name="病毒隔离区" icon="dss-icon80-virus" small="true"></ds-metro-item>
           <ds-metro-item name="360杀毒" icon="dss-icon80-antivirus" small="true"></ds-metro-item>
           <ds-metro-item name="安全卫士" icon="dss-icon80-360" small="true"></ds-metro-item>

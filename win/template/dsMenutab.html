@@ -1,0 +1,73 @@
+<div>
+  <div class="dss-wrap-top-menu-bar">
+    <div class="dss-top-menu-lt">
+    <h2>{{'tab.file'| translate}}</h2>
+    <div class="dss-sub-cont-file">
+        <div class="dss-wrap-sub-file">
+            <ul class="dss-sub-file">
+                <li><i class="dss-icon32-open-new"></i>{{'tab.openNewWindow'| translate}}<strong></strong></li>
+                <li><i class="dss-icon32-open-code"></i>{{'tab.openCommandPrompt'| translate}}<strong></strong></li>
+                <li><i class="dss-icon32-open-win"></i>{{'tab.openWindowsPowerShell'| translate}}(<span>R</span>)<strong></strong>
+                </li>
+                <li><i class="dss-icon32-del"></i>{{'tab.deleteHistory'| translate}}<strong></strong></li>
+                <li><i class="dss-icon32-help"></i>{{'tab.help'| translate}}<strong></strong></li>
+                <li><i class="dss-icon32-close"></i>{{'tab.close'| translate}}</li>
+            </ul>
+            <div class="dss-file-collec">
+                <div class="dss-file-default">
+                    <h2>{{'tab.frequentPlaces'| translate}}</h2>
+                    <ul>
+                        <li>1(<span>1</span>) {{'windows.documents'| translate}}<i class="dss-icon16-fix"></i></li>
+                        <li>2(<span>2</span>) {{'windows.pictures'| translate}}<i class="dss-icon16-fix"></i></li>
+                        <li>3(<span>3</span>) {{'windows.music'| translate}}<i class="dss-icon16-fix"></i></li>
+                        <li>4(<span>4</span>) {{'windows.videos'| translate}}<i class="dss-icon16-fix"></i></li>
+                        <li>5(<span>5</span>) {{'tab.desktop'| translate}}<i class="dss-icon16-fix"></i></li>
+                    </ul>
+                </div>
+                <div class="dss-file-opwin">
+                    <ul>
+                        <li><i class="dss-icon32-open-new"></i>{{'tab.openNewWindow'| translate}}(<span>N</span>)</li>
+                        <li><i class="dss-icon32-pro-new"></i>{{'tab.openNewWindowInNewProcess'| translate}}(<span>P</span>)</li>
+                    </ul>
+                </div>
+                <div class="dss-file-opcode">
+                    <ul>
+                        <li><i class="dss-icon32-open-code"></i>{{'tab.openCommandPrompt'| translate}}(<span>P</span>)</li>
+                        <li><i class="dss-icon32-ad-code"></i>{{'tab.openCommandPromptAsAdmin'| translate}}(<span>A</span>)</li>
+                    </ul>
+                </div>
+                <div class="dss-file-opwp">
+                    <ul>
+                        <li><i class="dss-icon32-open-win"></i>{{'tab.openWindowsPowerShell'| translate}}(<span>R</span>)</li>
+                        <li><i class="dss-icon32-ad-win"></i>{{'tab.openWindowsPowerShellAsAdmin'| translate}}(<span>R</span>)</li>
+                    </ul>
+                </div>
+                <div class="dss-file-dehis">
+                    <ul>
+                        <li><i class="dss-icon32-del-vt"></i>{{'tab.recentPlacesList'| translate}}(<span>N</span>)</li>
+                        <li><i class="dss-icon32-del-his"></i>{{'tab.addressBarHistory'| translate}}(<span>P</span>)</li>
+                    </ul>
+                </div>
+                <div class="dss-file-help">
+                    <ul>
+                        <li><i class="dss-icon32-help"></i>{{'tab.help'| translate}}(<span>N</span>)</li>
+                        <li><i class="dss-icon32-about"></i>{{'tab.aboutWindows'| translate}}(<span>P</span>)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dss-wrap-menu-tab">
+        <ul class="dss-menu-tab-title">
+            <li ng-repeat="item in tabs" ng-click="tabMenuClick($index,$event)"><span>{{item.name}}</span></li>
+        </ul>
+        <div class="dss-menu-tab-cont" ng-transclude>
+        </div>
+    </div>
+    <div class="dss-top-menu-rt">
+        <i class="dss-ico-unfold dss-ico-arrow-down" title="{{'tab.expandTheRibbon'| translate}}"></i>
+        <i class="dss-ico-rt-help" title="{{'tab.help'| translate}}"></i>
+    </div>
+  </div>
+ </div>
+</div>
