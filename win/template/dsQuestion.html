@@ -7,14 +7,18 @@
                 <span class="dss-q-title-nxt" ng-click="nextQuestion()">{{"question.next"| translate}}<i class="dss-icon16-nxt"></i></span>
                 <i class="dss-icon16-arrow"></i>
                 -->
+                   <i class="dss-icon16-set-normal"></i>
+                   <div class="dss-set-lan"><i class="dss-ico-arrow-lt"></i><span ng-click="switchLanguage()" class="dss-select-lan" >English</span> | <span ng-click="switchLanguage()">中文</span></div>
                 </div>
                 <div class="dss-q-con">
                             <div>{{currentItem.qcontext}}</div>
-                            <div class="dss-q-btns">
-                                    <button class="dss-btn-nor">{{"question.redo"| translate}}</button>
-                                    <button class="dss-btn-act">{{"question.complete"| translate}}</button>
-                                    <button class="dss-btn-q-all" ng-click="switchLanguage()"><i class="dss-icon16-switch"></i>{{"question.switchLanguage"|translate}}</button>
+                            <div class="wrap-dss-q-btns">
+                                <div class="dss-q-btns">
+                                    <button class="dss-btn-nor" ng-click="reset()">{{"question.redo"| translate}}</button>
+                                    <button class="dss-btn-act" ng-click="done()">{{"question.complete"| translate}}</button>
+                                    <i class="dss-ata-logo"></i>
                                 </div>
+                            </div>
                         </div>
                 </div>
             <div class="dss-q-all">
